@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://www.instagram.com/pancakes_freefly",
+      "permanent": false
+    }
+  ]
+}
