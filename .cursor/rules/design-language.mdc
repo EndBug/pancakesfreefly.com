@@ -1,0 +1,86 @@
+---
+alwaysApply: true
+---
+
+DESIGN LANGUAGE — PANCAKES FREEFLY UI
+
+Style:
+
+- Dark, high-contrast, action-sports aesthetic
+- Neo-brutalist structure with expressive surfaces
+- Sharp edges only (no border-radius except where strictly necessary)
+- Minimal decoration; hierarchy through size, weight, and contrast
+
+Layout:
+
+- Strong vertical and horizontal alignment
+- Large sections, full-width blocks
+- Clear separation between content blocks
+- No cards with soft shadows or floating effects
+
+Color:
+
+- Background: near-black (#0a0a0a or similar)
+- Text: white / light gray
+- Accent: neon pink (used sparingly)
+- Pink is reserved for CTAs, highlights, and key labels
+- Avoid gradients, pastels, glassmorphism
+
+Typography:
+
+- Two-font system
+  - UI font: clean grotesk (Inter / Space Grotesk / similar)
+    Used for navigation, body text, labels, forms
+  - Display font: handwritten / marker-style
+    Used ONLY for large headings or emphasis
+- Headings are oversized and bold
+- Body text is compact and readable
+- No decorative fonts in UI controls
+
+Components (shadcn/ui overrides):
+
+- Buttons:
+  - Rectangular, sharp corners
+  - Primary: pink border or fill, black background
+  - Secondary: neutral border, white text
+  - Clear hover states (fast, no easing)
+- Inputs:
+  - Dark background, thin borders
+  - Pink border on focus
+  - No rounded inputs
+- Cards:
+  - Flat, bordered containers
+  - No shadows
+  - Content-driven spacing
+- Badges / tags:
+  - Uppercase, small, sharp
+  - Pink only for important states
+
+Motion & Interaction:
+
+- Fast, snappy transitions
+- Prefer hard cuts or short transforms
+- Avoid smooth, slow, “SaaS-like” easing
+- Feedback should feel immediate and physical
+
+Imagery:
+
+- Full-bleed photography where possible
+- Dark overlays for readability
+- High contrast, no soft filters
+- Grain/noise allowed but subtle
+
+Do NOT:
+
+- Use rounded cards or buttons
+- Use soft gradients or glass effects
+- Use playful UI elements
+- Overuse the accent color
+- Make it feel corporate or “startup”
+
+Overall vibe:
+
+- Underground
+- Crew-focused
+- Precise, technical, expressive
+- Feels like night tunnel sessions, not a marketing website
