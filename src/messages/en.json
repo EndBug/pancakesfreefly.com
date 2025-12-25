@@ -24,5 +24,11 @@
         }
       ]
     }
+  },
+  "navbar": {
+    "teamName": "PANCAKES FREEFLY",
+    "home": "HOME",
+    "events": "EVENTS",
+    "contact": "CONTACT"
   }
 }

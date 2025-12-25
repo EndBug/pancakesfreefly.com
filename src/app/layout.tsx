@@ -4,6 +4,8 @@ import { type Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 
+import { MobileNav } from "~/components/mobile-nav";
+import { Navbar } from "~/components/navbar";
 import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
@@ -24,7 +26,11 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} dark`}>
       <body>
         <TRPCReactProvider>
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider>
+            <Navbar />
+            <MobileNav />
+            {children}
+          </NextIntlClientProvider>
         </TRPCReactProvider>
       </body>
     </html>
