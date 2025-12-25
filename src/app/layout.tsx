@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} dark`}>
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </TRPCReactProvider>
       </body>
     </html>
   );

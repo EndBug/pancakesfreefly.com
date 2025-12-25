@@ -1,0 +1,28 @@
+{
+  "home": {
+    "teamName": "PANCAKES FREEFLY",
+    "sections": {
+      "events": "EVENTI",
+      "team": "SQUADRA"
+    },
+    "events": {
+      "poster": "POSTER {event}"
+    },
+    "team": {
+      "members": [
+        {
+          "name": "MEMBRO SQUADRA 1",
+          "bio": "Testo bio segnaposto. Questo sarà sostituito con le informazioni reali del membro del team."
+        },
+        {
+          "name": "MEMBRO SQUADRA 2",
+          "bio": "Testo bio segnaposto. Questo sarà sostituito con le informazioni reali del membro del team."
+        },
+        {
+          "name": "MEMBRO SQUADRA 3",
+          "bio": "Testo bio segnaposto. Questo sarà sostituito con le informazioni reali del membro del team."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "home": {
+    "teamName": "PANCAKES FREEFLY",
+    "sections": {
+      "events": "EVENTS",
+      "team": "TEAM"
+    },
+    "events": {
+      "poster": "POSTER {event}"
+    },
+    "team": {
+      "members": [
+        {
+          "name": "TEAM MEMBER 1",
+          "bio": "Placeholder bio text goes here. This will be replaced with actual team member information."
+        },
+        {
+          "name": "TEAM MEMBER 2",
+          "bio": "Placeholder bio text goes here. This will be replaced with actual team member information."
+        },
+        {
+          "name": "TEAM MEMBER 3",
+          "bio": "Placeholder bio text goes here. This will be replaced with actual team member information."
+        }
+      ]
+    }
+  }
+}

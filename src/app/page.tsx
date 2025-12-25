@@ -1,6 +1,9 @@
+import { getTranslations } from "next-intl/server";
 import { Card, CardContent } from "~/components/ui/card";
 
 export default async function Home() {
+  const t = await getTranslations();
+
   return (
     <div className="bg-page-background min-h-screen">
       {/* Hero Section */}
@@ -14,7 +17,7 @@ export default async function Home() {
 
           {/* Team name */}
           <h1 className="text-foreground text-7xl font-bold tracking-tight md:text-9xl">
-            PANCAKES FREEFLY
+            {t("home.teamName")}
           </h1>
         </div>
       </section>
@@ -23,7 +26,7 @@ export default async function Home() {
       <section className="border-border bg-page-background border-b py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-foreground mb-12 text-5xl font-bold tracking-tight md:text-6xl">
-            EVENTS
+            {t("home.sections.events")}
           </h2>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -35,7 +38,7 @@ export default async function Home() {
                 {/* 4:5 vertical poster placeholder */}
                 <div className="bg-muted relative aspect-4/5 w-full">
                   <div className="text-muted-foreground absolute inset-0 flex items-center justify-center">
-                    POSTER {event}
+                    {t("home.events.poster", { event })}
                   </div>
                 </div>
 
@@ -54,24 +57,13 @@ export default async function Home() {
       <section className="border-border bg-page-background border-b py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-foreground mb-12 text-5xl font-bold tracking-tight md:text-6xl">
-            TEAM
+            {t("home.sections.team")}
           </h2>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              {
-                name: "TEAM MEMBER 1",
-                bio: "Placeholder bio text goes here. This will be replaced with actual team member information.",
-              },
-              {
-                name: "TEAM MEMBER 2",
-                bio: "Placeholder bio text goes here. This will be replaced with actual team member information.",
-              },
-              {
-                name: "TEAM MEMBER 3",
-                bio: "Placeholder bio text goes here. This will be replaced with actual team member information.",
-              },
-            ].map((member, index) => (
+            {(
+              t.raw("home.team.members") as Array<{ name: string; bio: string }>
+            ).map((member, index) => (
               <Card
                 key={index}
                 className="border-border bg-card rounded-none border-2"
