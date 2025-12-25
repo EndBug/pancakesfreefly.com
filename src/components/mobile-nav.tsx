@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
@@ -40,7 +41,13 @@ export function MobileNav() {
               onClick={closeMenu}
               className="flex flex-col items-center gap-4"
             >
-              <div className="border-primary bg-card h-20 w-20 border-2" />
+              <Image
+                src="/logo.svg"
+                alt={t("navbar.teamName")}
+                width={80}
+                height={80}
+                className="h-20 w-20"
+              />
               <span className="font-display text-primary text-6xl tracking-tight">
                 {t("navbar.teamName")}
               </span>

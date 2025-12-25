@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Card, CardContent } from "~/components/ui/card";
 
@@ -12,8 +13,15 @@ export default async function Home() {
         <div className="from-page-background via-page-background to-page-background absolute inset-0 bg-linear-to-b opacity-80" />
 
         <div className="relative z-10 flex flex-col items-center gap-8 px-4 text-center">
-          {/* Logo placeholder */}
-          <div className="border-primary bg-card h-32 w-32 border-2" />
+          {/* Logo */}
+          <Image
+            src="/logo.svg"
+            alt={t("home.teamName")}
+            width={128}
+            height={128}
+            className="h-32 w-32 md:h-48 md:w-48"
+            priority
+          />
 
           {/* Team name */}
           <h1 className="font-display text-primary text-7xl tracking-tight md:text-9xl">

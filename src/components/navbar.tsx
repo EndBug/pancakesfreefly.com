@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -31,7 +32,13 @@ export function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         {/* Logo & Name */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="border-primary bg-card h-10 w-10 border-2" />
+          <Image
+            src="/logo.svg"
+            alt={t("navbar.teamName")}
+            width={40}
+            height={40}
+            className="h-10 w-10"
+          />
           <span className="font-display text-primary tracking- translate-y-1 self-center text-4xl">
             {t("navbar.teamName")}
           </span>
