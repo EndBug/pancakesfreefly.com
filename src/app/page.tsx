@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { Card, CardContent } from "~/components/ui/card";
 
@@ -8,25 +9,111 @@ export default async function Home() {
   return (
     <div className="bg-page-background min-h-screen">
       {/* Hero Section */}
-      <section className="border-border relative flex min-h-screen items-center justify-center overflow-hidden border-b">
-        {/* Video background placeholder - will be implemented later */}
-        <div className="from-page-background via-page-background to-page-background absolute inset-0 bg-linear-to-b opacity-80" />
-
-        <div className="relative z-10 flex flex-col items-center gap-8 px-4 text-center">
-          {/* Logo */}
-          <Image
-            src="/logo.svg"
-            alt={t("home.teamName")}
-            width={128}
-            height={128}
-            className="h-32 w-32 md:h-48 md:w-48"
-            priority
+      <section className="border-border relative min-h-screen overflow-hidden border-b">
+        {/* Video background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            src="https://wo9fhjfkhj.ufs.sh/f/6BcYgWCS0fbTYH0ezWJMDvCEA3LuiQhaTUSoNbJzWtp91Xs6"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-cover"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "100vw",
+              height: "56.25vw",
+              minHeight: "100vh",
+              minWidth: "177.77vh",
+            }}
           />
+        </div>
 
-          {/* Team name */}
-          <h1 className="font-display text-primary text-7xl tracking-tight md:text-9xl">
-            {t("home.teamName")}
-          </h1>
+        {/* Asymmetric boxes */}
+        <div className="relative z-20 min-h-screen">
+          {/* Top-left: logo + title */}
+          <div className="absolute top-6 left-4 hidden md:top-10 md:left-8 md:block">
+            <div className="border-border bg-page-background/70 border-2 p-6 backdrop-blur-sm md:p-8">
+              <div className="flex items-center gap-5">
+                <Image
+                  src="/logo.svg"
+                  alt={t("home.teamName")}
+                  width={96}
+                  height={96}
+                  className="h-16 w-16 shrink-0 md:h-20 md:w-20"
+                  priority
+                />
+                <h1 className="font-display text-primary mt-4 text-6xl leading-none tracking-tight whitespace-nowrap md:text-7xl">
+                  {t("home.teamName")}
+                </h1>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom-right: links */}
+          <div className="absolute right-4 bottom-6 hidden md:right-8 md:bottom-10 md:block">
+            <div className="flex flex-col gap-4 md:flex-row">
+              <Link
+                href="/events"
+                className="border-border bg-page-background/65 hover:bg-page-background/80 text-foreground block border-2 p-6 backdrop-blur-sm transition-colors"
+              >
+                <div className="text-foreground text-3xl font-bold tracking-tight">
+                  {t("home.sections.events")}
+                </div>
+              </Link>
+
+              <Link
+                href="/contact"
+                className="border-border bg-page-background/65 hover:bg-page-background/80 text-foreground block border-2 p-6 backdrop-blur-sm transition-colors"
+              >
+                <div className="text-foreground text-3xl font-bold tracking-tight">
+                  {t("navbar.contact")}
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile fallback flow (prevents overlap) */}
+          <div className="container mx-auto flex min-h-screen flex-col justify-between gap-6 px-4 py-6 md:hidden">
+            <div className="border-border bg-page-background/70 border-2 p-6 backdrop-blur-sm">
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/logo.svg"
+                  alt={t("home.teamName")}
+                  width={80}
+                  height={80}
+                  className="h-14 w-14 shrink-0"
+                  priority
+                />
+                <h1 className="font-display text-primary translate-y-1 text-5xl leading-none tracking-tight">
+                  {t("home.teamName")}
+                </h1>
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              <Link
+                href="/events"
+                className="border-border bg-page-background/65 hover:bg-page-background/80 text-foreground block border-2 p-6 backdrop-blur-sm transition-colors"
+              >
+                <div className="text-foreground text-3xl font-bold tracking-tight">
+                  {t("home.sections.events")}
+                </div>
+              </Link>
+
+              <Link
+                href="/contact"
+                className="border-border bg-page-background/65 hover:bg-page-background/80 text-foreground block border-2 p-6 backdrop-blur-sm transition-colors"
+              >
+                <div className="text-foreground text-3xl font-bold tracking-tight">
+                  {t("navbar.contact")}
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
