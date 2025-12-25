@@ -18,7 +18,7 @@ export function MobileNav() {
       {/* Hamburger Button - Mobile Only */}
       <button
         onClick={toggleMenu}
-        className="border-border bg-page-background text-foreground hover:border-primary hover:text-primary fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center border-2 transition-colors md:hidden"
+        className="border-border bg-page-background text-foreground hover:border-primary hover:text-primary fixed top-4 right-4 z-100 flex h-10 w-10 items-center justify-center border-2 transition-colors md:hidden"
         aria-label="Toggle menu"
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -29,27 +29,33 @@ export function MobileNav() {
         <>
           {/* Backdrop */}
           <div
-            className="bg-page-background/95 fixed inset-0 z-40 backdrop-blur-sm md:hidden"
+            className="bg-page-background/95 fixed inset-0 z-90 backdrop-blur-sm md:hidden"
             onClick={closeMenu}
           />
 
           {/* Menu Panel */}
-          <nav className="bg-page-background fixed inset-0 z-40 flex flex-col items-center justify-center gap-12 md:hidden">
+          <nav className="bg-page-background fixed inset-0 z-90 flex flex-col items-center justify-center gap-12 md:hidden">
             {/* Logo & Name */}
             <Link
               href="/"
               onClick={closeMenu}
-              className="flex flex-col items-center gap-4"
+              className="flex flex-col items-center"
             >
               <Image
                 src="/logo.svg"
                 alt={t("navbar.teamName")}
                 width={80}
                 height={80}
-                className="h-20 w-20"
+                className="h-40 w-40"
               />
-              <span className="font-display text-primary text-6xl tracking-tight">
-                {t("navbar.teamName")}
+              <span className="font-display text-primary text-center text-6xl/10 tracking-tight">
+                {t("navbar.teamName")
+                  .split(" ")
+                  .map((word, index) => (
+                    <span key={index} className="block">
+                      {word}
+                    </span>
+                  ))}
               </span>
             </Link>
 

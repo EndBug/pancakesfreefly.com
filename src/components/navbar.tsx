@@ -25,7 +25,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`border-border bg-page-background fixed top-0 right-0 left-0 z-50 hidden border-b-2 transition-opacity duration-100 md:block ${
+      className={`border-border bg-page-background fixed top-0 right-0 left-0 z-110 hidden border-b-2 transition-opacity duration-100 md:block ${
         isVisible ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
