@@ -1,6 +1,6 @@
 {
   "home": {
-    "teamName": "PANCAKES FREEFLY",
+    "teamName": "PanCakes Freefly",
     "sections": {
       "events": "EVENTS",
       "team": "TEAM"
@@ -26,7 +26,7 @@
     }
   },
   "navbar": {
-    "teamName": "PANCAKES FREEFLY",
+    "teamName": "PanCakes Freefly",
     "home": "HOME",
     "events": "EVENTS",
     "contact": "CONTACT"

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function Navbar() {
-  const t = useTranslations("navbar");
+  const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -32,8 +32,8 @@ export function Navbar() {
         {/* Logo & Name */}
         <Link href="/" className="flex items-center gap-3">
           <div className="border-primary bg-card h-10 w-10 border-2" />
-          <span className="text-foreground text-xl font-bold tracking-tight">
-            {t("teamName")}
+          <span className="font-display text-primary tracking- translate-y-1 self-center text-4xl">
+            {t("navbar.teamName")}
           </span>
         </Link>
 
@@ -43,19 +43,19 @@ export function Navbar() {
             href="/"
             className="text-foreground hover:text-primary text-sm font-medium tracking-wide uppercase transition-colors"
           >
-            {t("home")}
+            {t("navbar.home")}
           </Link>
           <Link
             href="/events"
             className="text-foreground hover:text-primary text-sm font-medium tracking-wide uppercase transition-colors"
           >
-            {t("events")}
+            {t("navbar.events")}
           </Link>
           <Link
             href="/contact"
             className="text-foreground hover:text-primary text-sm font-medium tracking-wide uppercase transition-colors"
           >
-            {t("contact")}
+            {t("navbar.contact")}
           </Link>
         </div>
       </div>

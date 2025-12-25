@@ -16,7 +16,7 @@ export default async function Home() {
           <div className="border-primary bg-card h-32 w-32 border-2" />
 
           {/* Team name */}
-          <h1 className="text-foreground text-7xl font-bold tracking-tight md:text-9xl">
+          <h1 className="font-display text-primary text-7xl tracking-tight md:text-9xl">
             {t("home.teamName")}
           </h1>
         </div>

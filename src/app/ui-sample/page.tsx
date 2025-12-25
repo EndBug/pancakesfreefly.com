@@ -73,6 +73,95 @@ export default function UISamplePage() {
           </p>
         </div>
 
+        {/* Typography Display - Romana Pro */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Typography Display</CardTitle>
+            <CardDescription>Romana Pro display font showcase</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-8">
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <p className="text-muted-foreground text-xs uppercase">
+                  Display XL
+                </p>
+                <h1
+                  className="text-8xl leading-none"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Pancakes Freefly
+                </h1>
+              </div>
+              <div className="space-y-2">
+                <p className="text-muted-foreground text-xs uppercase">
+                  Display Large
+                </p>
+                <h2
+                  className="text-6xl leading-tight"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Underground Sessions
+                </h2>
+              </div>
+              <div className="space-y-2">
+                <p className="text-muted-foreground text-xs uppercase">
+                  Display Medium
+                </p>
+                <h3
+                  className="text-4xl"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Night Tunnel Runs
+                </h3>
+              </div>
+              <div className="space-y-2">
+                <p className="text-muted-foreground text-xs uppercase">
+                  Display Small
+                </p>
+                <h4
+                  className="text-2xl"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Crew Only
+                </h4>
+              </div>
+              <div className="space-y-2">
+                <p className="text-muted-foreground text-xs uppercase">
+                  Display XS
+                </p>
+                <p
+                  className="text-xl"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Technical Precision
+                </p>
+              </div>
+            </div>
+            <div className="border-t pt-6">
+              <p className="text-muted-foreground mb-4 text-xs uppercase">
+                Sample Text
+              </p>
+              <p
+                className="text-5xl leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                The quick brown fox jumps over the lazy dog
+              </p>
+            </div>
+            <div className="border-t pt-6">
+              <p className="text-muted-foreground mb-4 text-xs uppercase">
+                Numbers & Special Characters
+              </p>
+              <p
+                className="text-5xl"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                0123456789 !@#$%^&*()
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Buttons */}
         <Card>
           <CardHeader>

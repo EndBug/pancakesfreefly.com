@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export function MobileNav() {
-  const t = useTranslations("navbar");
+  const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -41,8 +41,8 @@ export function MobileNav() {
               className="flex flex-col items-center gap-4"
             >
               <div className="border-primary bg-card h-20 w-20 border-2" />
-              <span className="text-foreground text-2xl font-bold tracking-tight">
-                {t("teamName")}
+              <span className="font-display text-primary text-6xl tracking-tight">
+                {t("navbar.teamName")}
               </span>
             </Link>
 
@@ -53,21 +53,21 @@ export function MobileNav() {
                 onClick={closeMenu}
                 className="text-foreground hover:text-primary text-lg font-medium tracking-wide uppercase transition-colors"
               >
-                {t("home")}
+                {t("navbar.home")}
               </Link>
               <Link
                 href="/events"
                 onClick={closeMenu}
                 className="text-foreground hover:text-primary text-lg font-medium tracking-wide uppercase transition-colors"
               >
-                {t("events")}
+                {t("navbar.events")}
               </Link>
               <Link
                 href="/contact"
                 onClick={closeMenu}
                 className="text-foreground hover:text-primary text-lg font-medium tracking-wide uppercase transition-colors"
               >
-                {t("contact")}
+                {t("navbar.contact")}
               </Link>
             </div>
           </nav>

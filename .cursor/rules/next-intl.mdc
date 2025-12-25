@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+
+This project uses next-intl to handle translations.
+You should NEVER hard-code text of any kind.
+You are encouraged to created nested structures to organize translations, but you shouldn't use namespaces when calling
+useTranslations():
+
+- WRONG: const t = useTranslations("home"); t("a.b.c");
+- WRONG: const t = useTranslations(); t("home.a.b.c);

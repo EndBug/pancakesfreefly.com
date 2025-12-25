@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
+import localFont from "next/font/local";
 import { Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 
@@ -19,11 +20,25 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
+// Custom display font (variable) - update the path to match your font file
+// Variable fonts contain all weights/styles in a single file
+const customDisplayFont = localFont({
+  src: "../../public/fonts/Romana Pro.woff2", // or .woff, .ttf, .otf
+  variable: "--font-display",
+  display: "swap",
+  fallback: ["var(--font-space-grotesk)"],
+  // Optional: specify weight range if known (e.g., "100 900" or "400 700")
+  // weight: "100 900",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} dark`}>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${customDisplayFont.variable} dark`}
+    >
       <body>
         <TRPCReactProvider>
           <NextIntlClientProvider>
