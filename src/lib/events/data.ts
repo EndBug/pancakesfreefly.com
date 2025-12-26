@@ -1,8 +1,8 @@
-import { eventSchema, type Event } from "./types";
+import { ContactType, eventSchema, type Event } from "./types";
 
 // This file contains all event data
 // Add new events to this array
-export const eventsData: Event[] = [
+export const rawEventsData = [
   {
     id: "fooni-feb24",
     title: "Skill Camp",
@@ -12,6 +12,10 @@ export const eventsData: Event[] = [
     location: "Fööni | Helsinki, FI",
     registrationDeadline: "2024-04-22T23:59:59+02:00",
     imageUrl: "/images/events/fooni-feb24.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
   },
   {
     id: "ag-skill-camp-apr24",
@@ -23,6 +27,11 @@ export const eventsData: Event[] = [
     registrationDeadline: "2024-04-22T23:59:59+02:00",
     // Re-using the same image as the September 2024 skill camp, we had no flyer for this one
     imageUrl: "/images/events/ag-skill-camp-sep24.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@lucagiovannini_lg" },
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
   },
   {
     id: "ag-skill-camp-sep24",
@@ -33,6 +42,11 @@ export const eventsData: Event[] = [
     location: "Aero Gravity | Milano, IT",
     registrationDeadline: "2024-09-15T23:59:59+02:00",
     imageUrl: "/images/events/ag-skill-camp-sep24.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@lucagiovannini_lg" },
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
   },
   {
     id: "ag-skill-camp-feb25",
@@ -43,6 +57,11 @@ export const eventsData: Event[] = [
     location: "Aero Gravity | Milano, IT",
     registrationDeadline: "2025-02-17T23:59:59+02:00",
     imageUrl: "/images/events/ag-skill-camp-feb25.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@lucagiovannini_lg" },
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
   },
   {
     id: "ag-skill-camp-oct25",
@@ -53,6 +72,11 @@ export const eventsData: Event[] = [
     location: "Aero Gravity | Milano, IT",
     registrationDeadline: "2025-10-12T23:59:59+02:00",
     imageUrl: "/images/events/ag-skill-camp-oct25.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@lucagiovannini_lg" },
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
   },
   {
     id: "sunday-sharing-nov25",
@@ -62,6 +86,11 @@ export const eventsData: Event[] = [
     location: "Aero Gravity | Milano, IT",
     registrationDeadline: "2025-11-28T23:59:59+01:00",
     imageUrl: "/images/events/sunday-sharing-nov25.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@ferrero_chiara" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
   },
   {
     id: "sunday-sharing-dec25",
@@ -71,6 +100,11 @@ export const eventsData: Event[] = [
     location: "Aero Gravity | Milano, IT",
     registrationDeadline: "2025-12-12T23:59:59+01:00",
     imageUrl: "/images/events/sunday-sharing-dec25.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@ferrero_chiara" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
   },
   {
     id: "ag-skill-camp-mar26",
@@ -81,8 +115,15 @@ export const eventsData: Event[] = [
     location: "Aero Gravity | Milano, IT",
     registrationDeadline: "2026-03-01T23:59:59+01:00",
     imageUrl: "/images/events/ag-skill-camp-mar26.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@lucagiovannini_lg" },
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
   },
-];
+] as const satisfies Event[];
+
+export const eventsData = rawEventsData as Event[];
 
 // Validate all events at module load time
 eventsData.forEach((event, index) => {

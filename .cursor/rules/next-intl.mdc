@@ -9,3 +9,15 @@ useTranslations():
 
 - WRONG: const t = useTranslations("home"); t("a.b.c");
 - WRONG: const t = useTranslations(); t("home.a.b.c);
+
+When creating a new page or layout, make sure to include the locale param.
+Also, you need to add the following code:
+
+```tsx
+// Enable static rendering
+setRequestLocale(locale);
+// Explicitly pass locale to ensure correct translations during client-side navigation
+const t = await getTranslations({ locale });
+```
+
+It's important that the getTranslations call is after setRequestLocale, and includes the locale explicitly

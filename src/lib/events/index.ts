@@ -1,12 +1,21 @@
-import { eventsData } from "./data";
+import { eventsData, type rawEventsData } from "./data";
 
 export { eventsData } from "./data";
 export {
+  ContactType,
+  contactItemSchema,
   eventSchema,
   eventTypeSchema,
+  type ContactItem,
   type Event,
   type EventType,
 } from "./types";
+export { getEventIdFromPathname } from "./utils";
+
+/**
+ * Type-safe event ID extracted from events data
+ */
+export type EventId = (typeof rawEventsData)[number]["id"];
 
 /**
  * Get all events

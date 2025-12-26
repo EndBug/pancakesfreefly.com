@@ -15,10 +15,11 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations();
 
   // Enable static rendering
   setRequestLocale(locale);
+  // Explicitly pass locale to ensure correct translations during client-side navigation
+  const t = await getTranslations({ locale });
 
   // Get all events and filter for upcoming ones
   const allEvents = getAllEvents();

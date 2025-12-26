@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usePathname, Link } from "~/i18n/navigation";
 import { routing } from "~/i18n/routing";
+import { cn } from "~/lib/utils";
 
 interface NavbarProps {
   enableScrollBehavior?: boolean;
@@ -39,11 +40,13 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
 
   return (
     <nav
-      className={`border-border bg-page-background fixed top-0 right-0 left-0 z-110 hidden border-b-2 transition-all duration-300 md:block ${
+      className={cn(
+        "border-border bg-page-background z-110 hidden border-b-2 transition-all duration-300 md:block",
         isVisible
           ? "translate-y-0 opacity-100"
-          : "pointer-events-none -translate-y-full opacity-0"
-      }`}
+          : "pointer-events-none -translate-y-full opacity-0",
+        enableScrollBehavior ? "fixed top-0 right-0 left-0" : "block w-full",
+      )}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo & Name */}
@@ -88,9 +91,7 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
               const isActive = locale === currentLocale;
               return (
                 <span key={locale} className="flex items-center gap-1">
-                  {index > 0 && (
-                    <span className="text-foreground/30">|</span>
-                  )}
+                  {index > 0 && <span className="text-foreground/30">|</span>}
                   <Link
                     href={pathname}
                     locale={locale}

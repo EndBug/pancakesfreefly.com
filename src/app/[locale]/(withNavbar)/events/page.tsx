@@ -10,10 +10,10 @@ export default async function EventsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations();
-
   // Enable static rendering
   setRequestLocale(locale);
+  // Explicitly pass locale to ensure correct translations during client-side navigation
+  const t = await getTranslations({ locale });
 
   const allEvents = getAllEvents();
   const now = new Date();

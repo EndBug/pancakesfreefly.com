@@ -45,6 +45,37 @@
     "noUpcoming": "Nessun evento in programma al momento.",
     "noPast": "Nessun evento passato."
   },
+  "event": {
+    "banner": {
+      "dates": "DATE",
+      "location": "LUOGO",
+      "registrationDeadline": "SCADENZA ISCRIZIONI",
+      "registrationsOpen": "ISCRIZIONI APERTE",
+      "registrationsClosed": "ISCRIZIONI CHIUSE",
+      "contacts": "CONTATTI"
+    },
+    "backToEvents": "TORNA A TUTTI GLI EVENTI",
+    "agSkillCampMar26": {
+      "intro": "Ciao ragazzi, finalmente fuori il nostro skill camp di marzo! 🌪️",
+      "promoPrice": "💸 <strong>NUOVO prezzo PROMO</strong>: <strong>750€/h INCLUSO</strong> di coaching e high speed.",
+      "dates": "⏱️ <strong>QUANDO</strong>: <strong>2-6 e 9-13 marzo</strong>",
+      "coachesIntro": "🪶 <strong>3 coach</strong> a rotazione, che potrete contattare direttamente per le prenotazioni:",
+      "coaches": [
+        {
+          "name": "Luca",
+          "instagram": "https://www.instagram.com/lucagiovannini_lg/"
+        },
+        {
+          "name": "Pier",
+          "instagram": "https://www.instagram.com/pier_andrea.ag/"
+        },
+        {
+          "name": "Fede",
+          "instagram": "https://www.instagram.com/federico.grandi_/"
+        }
+      ]
+    }
+  },
   "metadata": {
     "title": "PanCakes Freefly",
     "description": "Eventi di tunnel e skydiving in Italia e Europa"

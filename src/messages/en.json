@@ -45,6 +45,37 @@
     "noUpcoming": "No upcoming events at the moment.",
     "noPast": "No past events."
   },
+  "event": {
+    "banner": {
+      "dates": "DATES",
+      "location": "LOCATION",
+      "registrationDeadline": "REGISTRATION DEADLINE",
+      "registrationsOpen": "REGISTRATIONS OPEN",
+      "registrationsClosed": "REGISTRATIONS CLOSED",
+      "contacts": "CONTACTS"
+    },
+    "backToEvents": "BACK TO ALL EVENTS",
+    "agSkillCampMar26": {
+      "intro": "Hey guys, our March skill camp is finally out! 🌪️",
+      "promoPrice": "💸 <strong>NEW PROMO price</strong>: <strong>750€/h INCLUDING</strong> coaching and high speed.",
+      "dates": "⏱️ <strong>WHEN</strong>: <strong>March 2-6 and 9-13</strong>",
+      "coachesIntro": "🪶 <strong>3 coaches</strong> on rotation, who you can contact directly for bookings:",
+      "coaches": [
+        {
+          "name": "Luca",
+          "instagram": "https://www.instagram.com/lucagiovannini_lg/"
+        },
+        {
+          "name": "Pier",
+          "instagram": "https://www.instagram.com/pier_andrea.ag/"
+        },
+        {
+          "name": "Fede",
+          "instagram": "https://www.instagram.com/federico.grandi_/"
+        }
+      ]
+    }
+  },
   "metadata": {
     "title": "PanCakes Freefly",
     "description": "Tunnel & Skydiving events in Italy and Europe"
