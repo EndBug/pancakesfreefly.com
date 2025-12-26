@@ -37,12 +37,16 @@
     "teamName": "PanCakes Freefly",
     "home": "HOME",
     "events": "EVENTI",
-    "contact": "CONTATTO"
+    "contact": "CONTATTI"
   },
   "events": {
     "upcoming": "PROSSIMI EVENTI",
     "past": "EVENTI PASSATI",
     "noUpcoming": "Nessun evento in programma al momento.",
     "noPast": "Nessun evento passato."
+  },
+  "metadata": {
+    "title": "PanCakes Freefly",
+    "description": "Eventi di tunnel e skydiving in Italia e Europa"
   }
 }

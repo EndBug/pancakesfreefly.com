@@ -2,8 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { usePathname, Link } from "~/i18n/navigation";
+import { routing } from "~/i18n/routing";
 
 interface NavbarProps {
   enableScrollBehavior?: boolean;
@@ -12,6 +14,9 @@ interface NavbarProps {
 export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
   const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
+  const params = useParams();
+  const currentLocale = (params?.locale as string) || routing.defaultLocale;
 
   useEffect(() => {
     if (!enableScrollBehavior) {
@@ -77,6 +82,30 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
           >
             {t("navbar.contact")}
           </Link>
+          {/* Language Switcher */}
+          <div className="flex items-center gap-1 text-sm font-medium uppercase">
+            {routing.locales.map((locale, index) => {
+              const isActive = locale === currentLocale;
+              return (
+                <span key={locale} className="flex items-center gap-1">
+                  {index > 0 && (
+                    <span className="text-foreground/30">|</span>
+                  )}
+                  <Link
+                    href={pathname}
+                    locale={locale}
+                    className={`transition-colors ${
+                      isActive
+                        ? "text-foreground"
+                        : "text-foreground/50 hover:text-foreground"
+                    }`}
+                  >
+                    {locale.toUpperCase()}
+                  </Link>
+                </span>
+              );
+            })}
+          </div>
         </div>
       </div>
     </nav>

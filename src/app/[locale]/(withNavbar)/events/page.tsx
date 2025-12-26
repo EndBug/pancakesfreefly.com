@@ -1,9 +1,20 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { EventCard } from "~/components/event-card";
 import { getAllEvents } from "~/lib/events";
 
-export default async function EventsPage() {
+export const dynamic = "force-static";
+
+export default async function EventsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations();
+
+  // Enable static rendering
+  setRequestLocale(locale);
+
   const allEvents = getAllEvents();
   const now = new Date();
 

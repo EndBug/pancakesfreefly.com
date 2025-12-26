@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
+import { Link } from "~/i18n/navigation";
 import { Badge } from "~/components/ui/badge";
 import { Card, CardContent } from "~/components/ui/card";
 import { type Event } from "~/lib/events";

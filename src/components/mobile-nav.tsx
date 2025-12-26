@@ -3,12 +3,17 @@
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useState } from "react";
+import { usePathname, Link } from "~/i18n/navigation";
+import { routing } from "~/i18n/routing";
 
 export function MobileNav() {
   const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const params = useParams();
+  const currentLocale = (params?.locale as string) || routing.defaultLocale;
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -85,6 +90,29 @@ export function MobileNav() {
           >
             {t("navbar.contact")}
           </Link>
+          {/* Language Switcher */}
+          <div className="flex items-center gap-1 text-lg font-medium uppercase">
+            {routing.locales.map((locale, index) => {
+              const isActive = locale === currentLocale;
+              return (
+                <span key={locale} className="flex items-center gap-1">
+                  {index > 0 && <span className="text-foreground/30">|</span>}
+                  <Link
+                    href={pathname}
+                    locale={locale}
+                    onClick={closeMenu}
+                    className={`transition-colors ${
+                      isActive
+                        ? "text-foreground"
+                        : "text-foreground/50 hover:text-foreground"
+                    }`}
+                  >
+                    {locale.toUpperCase()}
+                  </Link>
+                </span>
+              );
+            })}
+          </div>
         </div>
       </nav>
     </>

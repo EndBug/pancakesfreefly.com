@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "~/i18n/navigation";
 import { EventCard } from "~/components/event-card";
 import { HeroSection } from "~/components/hero-section";
 import { Navbar } from "~/components/navbar";
@@ -7,8 +7,18 @@ import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
 import { getAllEvents } from "~/lib/events";
 
-export default async function Home() {
+export const dynamic = "force-static";
+
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations();
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   // Get all events and filter for upcoming ones
   const allEvents = getAllEvents();

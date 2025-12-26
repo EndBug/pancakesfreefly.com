@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { Link } from "~/i18n/navigation";
 import { ChevronDown } from "lucide-react";
 import { Card } from "~/components/ui/card";
 
