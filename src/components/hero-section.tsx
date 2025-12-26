@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { ChevronDown } from "lucide-react";
 import { Card } from "~/components/ui/card";
 
 const HERO_VIDEO_SRC =
@@ -9,6 +11,30 @@ const HERO_VIDEO_SRC =
 
 export function HeroSection() {
   const t = useTranslations();
+  const [opacity, setOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPercent =
+        window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight);
+      const fadeOutThreshold = 0.1; // 10%
+
+      if (scrollPercent > fadeOutThreshold) {
+        // Fade out completely once past 10%
+        setOpacity(0);
+      } else {
+        // Fade out gradually from 0% to 10%
+        const fadeProgress = scrollPercent / fadeOutThreshold;
+        setOpacity(1 - fadeProgress);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial scroll position
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className="border-border bg-page-background relative h-screen max-h-screen overflow-hidden border-b p-4">
@@ -54,6 +80,18 @@ export function HeroSection() {
               {t("navbar.contact")}
             </div>
           </Link>
+        </div>
+      </div>
+
+      {/* Scroll indicator - bottom center */}
+      <div
+        className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 transition-opacity duration-300"
+        style={{ opacity }}
+      >
+        <div className="flex flex-col items-center gap-2">
+          <div className="border-border flex h-8 w-8 items-center justify-center">
+            <ChevronDown className="text-foreground animate-scroll-float h-4 w-4" />
+          </div>
         </div>
       </div>
     </section>
