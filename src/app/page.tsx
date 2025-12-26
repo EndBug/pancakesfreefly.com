@@ -38,21 +38,20 @@ export default async function Home() {
                     <EventCard key={event.id} event={event} />
                   ))}
                 </div>
-
-                {/* See All Events Button */}
-                {allEvents.length > upcomingEvents.length && (
-                  <div className="mt-12 flex justify-center">
-                    <Link href="/events">
-                      <Button variant="outline" className="rounded-none">
-                        {t("home.events.seeAll")}
-                      </Button>
-                    </Link>
-                  </div>
-                )}
               </>
             ) : (
               <div className="text-muted-foreground text-center">
                 <p>{t("home.events.noUpcoming")}</p>
+              </div>
+            )}
+            {/* See All Events Button */}
+            {allEvents.length > upcomingEvents.length && (
+              <div className="mt-12 flex justify-center">
+                <Link href="/events">
+                  <Button variant="outline" className="rounded-none">
+                    {t("home.events.seeAll")}
+                  </Button>
+                </Link>
               </div>
             )}
           </div>

@@ -38,5 +38,11 @@
     "home": "HOME",
     "events": "EVENTS",
     "contact": "CONTACT"
+  },
+  "events": {
+    "upcoming": "UPCOMING EVENTS",
+    "past": "PAST EVENTS",
+    "noUpcoming": "No upcoming events at the moment.",
+    "noPast": "No past events."
   }
 }

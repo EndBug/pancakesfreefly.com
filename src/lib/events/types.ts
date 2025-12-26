@@ -15,7 +15,8 @@ export const eventSchema = z.object({
     .refine(
       (val) => val.startsWith("/") || z.string().url().safeParse(val).success,
       {
-        message: "Image URL must be a local path (starting with /) or a valid URL",
+        message:
+          "Image URL must be a local path (starting with /) or a valid URL",
       },
     ),
 });

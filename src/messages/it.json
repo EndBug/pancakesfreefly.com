@@ -38,5 +38,11 @@
     "home": "HOME",
     "events": "EVENTI",
     "contact": "CONTATTO"
+  },
+  "events": {
+    "upcoming": "PROSSIMI EVENTI",
+    "past": "EVENTI PASSATI",
+    "noUpcoming": "Nessun evento in programma al momento.",
+    "noPast": "Nessun evento passato."
   }
 }

@@ -14,11 +14,17 @@ export async function EventCard({ event }: EventCardProps) {
   const locale = await getLocale();
   const now = new Date();
   const registrationDeadline = new Date(event.registrationDeadline);
-  const registrationsOpen = now < registrationDeadline;
 
   // Format dates
   const startDate = new Date(event.date);
   const endDate = event.endDate ? new Date(event.endDate) : null;
+
+  // Check if event is in the past
+  const eventEndDate = endDate || startDate;
+  const isPastEvent = eventEndDate < now;
+
+  // Only show registration status for upcoming events
+  const registrationsOpen = !isPastEvent && now < registrationDeadline;
 
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat(locale, {
@@ -72,19 +78,21 @@ export async function EventCard({ event }: EventCardProps) {
             <p className="text-muted-foreground text-sm">{event.location}</p>
           </div>
 
-          {/* Registration Status CTA */}
-          <div className="pt-2">
-            <Badge
-              variant={registrationsOpen ? "default" : "secondary"}
-              className={`rounded-none ${
-                registrationsOpen ? "bg-primary text-primary-foreground" : ""
-              }`}
-            >
-              {registrationsOpen
-                ? t("home.events.registrationsOpen")
-                : t("home.events.registrationsClosed")}
-            </Badge>
-          </div>
+          {/* Registration Status CTA - Only show for upcoming events */}
+          {!isPastEvent && (
+            <div className="pt-2">
+              <Badge
+                variant={registrationsOpen ? "default" : "secondary"}
+                className={`rounded-none ${
+                  registrationsOpen ? "bg-primary text-primary-foreground" : ""
+                }`}
+              >
+                {registrationsOpen
+                  ? t("home.events.registrationsOpen")
+                  : t("home.events.registrationsClosed")}
+              </Badge>
+            </div>
+          )}
         </CardContent>
       </Card>
     </Link>
