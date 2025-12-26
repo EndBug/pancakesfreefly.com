@@ -55,6 +55,12 @@
       "contacts": "CONTATTI"
     },
     "backToEvents": "TORNA A TUTTI GLI EVENTI",
+    "sundaySharing": {
+      "registrationForm": {
+        "title": "Partecipa al Sunday Sharing",
+        "closed": "Le registrazioni sono ora chiuse. Contattaci per ricevere informazioni su altri eventi."
+      }
+    },
     "agSkillCampMar26": {
       "intro": "Ciao ragazzi, finalmente fuori il nostro skill camp di marzo! 🌪️",
       "promoPrice": "💸 <strong>NUOVO prezzo PROMO</strong>: <strong>750€/h INCLUSO</strong> di coaching e high speed.",
@@ -74,6 +80,36 @@
           "instagram": "https://www.instagram.com/federico.grandi_/"
         }
       ]
+    },
+    "sundaySharingNov25": {
+      "intro": "Hello flyers!",
+      "firstDate": "Finalmente abbiamo la prima data del Sunday Sharing di questa stagione. 🥞",
+      "winter": "L'inverno è arrivato e la domenica si finisce presto di saltare purtroppo. 🧊❄️🧤",
+      "purpose": "Per questo abbiamo pensato a questo evento dove potete ritrovarvi per volare in gruppo, allenarvi e soprattutto divertirvi in attesa che torni la bella stagione. 🪂",
+      "whenAndWhere": "Quando e dove?",
+      "dateTime": "<strong>30 novembre 2025, ritrovo alle 17:30 in Aero Gravity</strong>",
+      "whatIncludes": "Cosa include il Sunday Sharing?",
+      "mobilitySession": "🧘‍♀️ Una <strong>sessione di mobilità</strong> di 45' minuti tenuta dalla nostra coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimo <strong>30 minuti</strong> di volo in un gruppo da 5+1 adatto al tuo livello",
+      "pizzaBeer": "🍺🍕 <strong>Pizza e birra</strong> alla fine dell'evento",
+      "price": "💸 Il prezzo per l'evento è di 140 euro a persona.",
+      "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
+      "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
+    },
+    "sundaySharingDec25": {
+      "intro": "Hey flyers!",
+      "secondEdition": "Visto il successo della prima edizione, ecco qui la seconda data prima che arrivi il Natale! 🎄🍻",
+      "winter": "L'inverno è arrivato e la domenica si finisce presto di saltare purtroppo. 🧊❄️🧤",
+      "purpose": "Per questo abbiamo pensato a questo evento dove potete ritrovarvi per volare in gruppo, allenarvi e soprattutto divertirvi in attesa che torni la bella stagione. 🪂",
+      "whenAndWhere": "Quando e dove?",
+      "dateTime": "<strong>14 dicembre 2025, ritrovo alle 17:30 in Aero Gravity</strong>",
+      "whatIncludes": "Cosa include il Sunday Sharing?",
+      "mobilitySession": "🧘‍♀️ Una <strong>sessione di mobilità</strong> di 45' minuti tenuta dalla nostra coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimo <strong>30 minuti</strong> di volo in un gruppo da 4+1 adatto al tuo livello",
+      "pizzaBeer": "🍺🍕 <strong>Pizza e birra</strong> alla fine dell'evento",
+      "price": "💸 Il prezzo per l'evento è di 140 euro a persona.",
+      "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
+      "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
     }
   },
   "metadata": {

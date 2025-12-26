@@ -55,6 +55,12 @@
       "contacts": "CONTACTS"
     },
     "backToEvents": "BACK TO ALL EVENTS",
+    "sundaySharing": {
+      "registrationForm": {
+        "title": "Join Sunday Sharing",
+        "closed": "Registrations are now closed. Contact us to receive information about other events."
+      }
+    },
     "agSkillCampMar26": {
       "intro": "Hey guys, our March skill camp is finally out! 🌪️",
       "promoPrice": "💸 <strong>NEW PROMO price</strong>: <strong>750€/h INCLUDING</strong> coaching and high speed.",
@@ -74,6 +80,36 @@
           "instagram": "https://www.instagram.com/federico.grandi_/"
         }
       ]
+    },
+    "sundaySharingNov25": {
+      "intro": "Hello flyers!",
+      "firstDate": "Finally we have the first date of the Sunday Sharing for this season. 🥞",
+      "winter": "Winter has arrived and unfortunately Sunday jumping ends early. 🧊❄️🧤",
+      "purpose": "That's why we thought of this event where you can meet up to fly in a group, train and above all have fun while waiting for the good season to return. 🪂",
+      "whenAndWhere": "When and where?",
+      "dateTime": "<strong>November 30, 2025, meeting at 17:30 at Aero Gravity</strong>",
+      "whatIncludes": "What does the Sunday Sharing include?",
+      "mobilitySession": "🧘‍♀️ A 45-minute <strong>mobility session</strong> held by our coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimum <strong>30 minutes</strong> of flying in a 5+1 group suitable for your level",
+      "pizzaBeer": "🍺🍕 <strong>Pizza and beer</strong> at the end of the session",
+      "price": "💸 The price for the event is 140 euros per person.",
+      "registrationInfo": "To register for the event you will need to fill out the form below, which will also help us understand which group is most suitable for you. Once completed, we will contact you to confirm your participation.",
+      "contactInfo": "For any other information, please don't hesitate to contact us at the profiles indicated above."
+    },
+    "sundaySharingDec25": {
+      "intro": "Hey flyers!",
+      "secondEdition": "Given the success of the first edition, here's the second date before Christmas arrives! 🎄🍻",
+      "winter": "Winter has arrived and unfortunately Sunday jumping ends early. 🧊❄️🧤",
+      "purpose": "That's why we thought of this event where you can meet up to fly in a group, train and above all have fun while waiting for the good season to return. 🪂",
+      "whenAndWhere": "When and where?",
+      "dateTime": "<strong>December 14, 2025, meeting at 17:30 at Aero Gravity</strong>",
+      "whatIncludes": "What does the Sunday Sharing include?",
+      "mobilitySession": "🧘‍♀️ A 45-minute <strong>mobility session</strong> held by our coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimum <strong>30 minutes</strong> of flying in a 4+1 group suitable for your level",
+      "pizzaBeer": "🍺🍕 <strong>Pizza and beer</strong> at the end of the session",
+      "price": "💸 The price for the event is 140 euros per person.",
+      "registrationInfo": "To register for the event you will need to fill out the form below, which will also help us understand which group is most suitable for you. Once completed, we will contact you to confirm your participation.",
+      "contactInfo": "For any other information, please don't hesitate to contact us at the profiles indicated above."
     }
   },
   "metadata": {

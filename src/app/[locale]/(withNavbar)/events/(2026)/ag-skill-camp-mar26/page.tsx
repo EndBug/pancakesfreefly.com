@@ -46,37 +46,31 @@ export default async function AgSkillCampMar26Page({
 
   return (
     <EventLayout eventId="ag-skill-camp-mar26">
-      <div className="prose prose-invert prose-h1:text-primary prose-h2:text-primary prose-h3:text-primary prose-a:hover:text-primary prose-a:transition-colors mt-8 max-w-none">
-        <p>{t("event.agSkillCampMar26.intro")}</p>
-        <p>
-          {t.rich("event.agSkillCampMar26.promoPrice", {
-            strong: (chunks) => <strong>{chunks}</strong>,
-          })}
-        </p>
-        <p>
-          {t.rich("event.agSkillCampMar26.dates", {
-            strong: (chunks) => <strong>{chunks}</strong>,
-          })}
-        </p>
-        <p>
-          {t.rich("event.agSkillCampMar26.coachesIntro", {
-            strong: (chunks) => <strong>{chunks}</strong>,
-          })}
-        </p>
-        <ul>
-          {coaches.map((coach) => (
-            <li key={coach.name}>
-              <a
-                href={coach.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {coach.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <p>{t("event.agSkillCampMar26.intro")}</p>
+      <p>
+        {t.rich("event.agSkillCampMar26.promoPrice", {
+          strong: (chunks) => <strong>{chunks}</strong>,
+        })}
+      </p>
+      <p>
+        {t.rich("event.agSkillCampMar26.dates", {
+          strong: (chunks) => <strong>{chunks}</strong>,
+        })}
+      </p>
+      <p>
+        {t.rich("event.agSkillCampMar26.coachesIntro", {
+          strong: (chunks) => <strong>{chunks}</strong>,
+        })}
+      </p>
+      <ul>
+        {coaches.map((coach) => (
+          <li key={coach.name}>
+            <a href={coach.instagram} target="_blank" rel="noopener noreferrer">
+              {coach.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </EventLayout>
   );
 }

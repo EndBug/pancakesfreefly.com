@@ -42,7 +42,9 @@ export async function EventLayout({ eventId, children }: EventLayoutProps) {
         <EventBanner event={event} />
 
         {/* Page Content */}
-        <div className="event-content">{children}</div>
+        <div className="prose prose-invert prose-h1:underline prose-h1:decoration-primary prose-h1:underline-offset-4 prose-h2:underline prose-h2:decoration-primary prose-h2:underline-offset-4 prose-h3:underline prose-h3:decoration-primary prose-h3:underline-offset-4 prose-a:hover:text-primary prose-a:transition-colors mt-8 max-w-none">
+          {children}
+        </div>
 
         {/* Backlink to all events */}
         <div className="border-border mt-12 border-t-2 pt-8">
