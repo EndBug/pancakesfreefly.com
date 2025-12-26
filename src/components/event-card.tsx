@@ -20,7 +20,7 @@ export async function EventCard({ event }: EventCardProps) {
   const endDate = event.endDate ? new Date(event.endDate) : null;
 
   // Check if event is in the past
-  const eventEndDate = endDate || startDate;
+  const eventEndDate = endDate ?? startDate;
   const isPastEvent = eventEndDate < now;
 
   // Only show registration status for upcoming events
@@ -39,8 +39,31 @@ export async function EventCard({ event }: EventCardProps) {
     : formatDate(startDate);
 
   return (
-    <Link href={`/events/${event.id}`}>
-      <Card className="border-border bg-card group hover:border-primary mx-auto flex max-w-md flex-col overflow-hidden rounded-none border-2 py-0 transition-all sm:mx-0 sm:max-w-none sm:flex-row">
+    <Link href={`/events/${event.id}`} className="group relative block">
+      <Card className="border-border bg-card mx-auto flex max-w-md flex-col overflow-hidden rounded-none border-2 py-0 transition-all sm:mx-0 sm:max-w-none sm:flex-row">
+        {/* Animated border - using separate divs for each side to avoid stretching */}
+        <div className="pointer-events-none absolute inset-0 z-10">
+          {/* Top border */}
+          <div
+            className="border-reveal-top bg-primary absolute top-0 left-0 h-[2px]"
+            style={{ width: "100%" }}
+          />
+          {/* Right border */}
+          <div
+            className="border-reveal-right bg-primary absolute top-0 right-0 w-[2px]"
+            style={{ height: "100%" }}
+          />
+          {/* Bottom border */}
+          <div
+            className="border-reveal-bottom bg-primary absolute right-0 bottom-0 h-[2px]"
+            style={{ width: "100%" }}
+          />
+          {/* Left border */}
+          <div
+            className="border-reveal-left bg-primary absolute bottom-0 left-0 w-[2px]"
+            style={{ height: "100%" }}
+          />
+        </div>
         {/* Event Image */}
         <div className="bg-muted relative aspect-square w-full shrink-0 overflow-hidden sm:aspect-4/5 sm:w-auto sm:max-w-[300px] sm:min-w-[200px] xl:max-w-[400px]">
           <Image

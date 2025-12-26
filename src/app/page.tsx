@@ -48,7 +48,10 @@ export default async function Home() {
             {allEvents.length > upcomingEvents.length && (
               <div className="mt-12 flex justify-center">
                 <Link href="/events">
-                  <Button variant="outline" className="rounded-none">
+                  <Button
+                    variant="outline"
+                    className="cursor-pointer rounded-none"
+                  >
                     {t("home.events.seeAll")}
                   </Button>
                 </Link>

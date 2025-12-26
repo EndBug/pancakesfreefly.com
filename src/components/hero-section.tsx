@@ -40,7 +40,7 @@ export function HeroSection() {
     <section className="border-border bg-page-background relative h-screen max-h-screen overflow-hidden border-b p-4">
       <div className="relative container mx-auto flex h-full max-h-full items-stretch px-4 md:items-center md:px-8">
         {/* Video card - left aligned, taking most of the screen */}
-        <Card className="border-border bg-card relative z-0 m-4 h-[calc(100%-2rem)] max-h-full w-[calc(100%-2rem)] overflow-visible rounded-none border-2 pb-0 md:m-0 md:h-auto md:max-h-full md:w-[95%]">
+        <Card className="border-border bg-card relative z-0 m-4 h-[calc(100%-2rem)] max-h-full w-[calc(100%-2rem)] overflow-visible rounded-none border-2 py-0 md:m-0 md:h-auto md:max-h-full md:w-[95%]">
           <div className="relative h-full w-full">
             <video
               src={HERO_VIDEO_SRC}

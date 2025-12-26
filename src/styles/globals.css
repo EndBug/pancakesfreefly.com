@@ -142,3 +142,87 @@
 .animate-scroll-float {
   animation: scroll-float 2s ease-in-out infinite;
 }
+
+@keyframes border-reveal-top {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes border-reveal-right {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+@keyframes border-reveal-bottom {
+  from {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+
+@keyframes border-reveal-left {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+.border-reveal-top {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.border-reveal-right {
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.border-reveal-bottom {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.border-reveal-left {
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.group:hover .border-reveal-top,
+.group\/card:hover .border-reveal-top {
+  animation: border-reveal-top 0.1s ease-out forwards;
+}
+
+.group:hover .border-reveal-right,
+.group\/card:hover .border-reveal-right {
+  animation: border-reveal-right 0.1s ease-out 0.1s forwards;
+}
+
+.group:hover .border-reveal-bottom,
+.group\/card:hover .border-reveal-bottom {
+  animation: border-reveal-bottom 0.1s ease-out 0.2s forwards;
+}
+
+.group:hover .border-reveal-left,
+.group\/card:hover .border-reveal-left {
+  animation: border-reveal-left 0.1s ease-out 0.3s forwards;
+}
