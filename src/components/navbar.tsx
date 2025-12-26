@@ -5,11 +5,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export function Navbar() {
+interface NavbarProps {
+  enableScrollBehavior?: boolean;
+}
+
+export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
   const t = useTranslations();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (!enableScrollBehavior) {
+      setIsVisible(true);
+      return;
+    }
+
     const handleScroll = () => {
       const scrollThreshold = window.innerHeight * 0.8; // 80% dvh
       const scrolled = window.scrollY;
@@ -21,12 +30,14 @@ export function Navbar() {
     handleScroll(); // Check initial state
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [enableScrollBehavior]);
 
   return (
     <nav
-      className={`border-border bg-page-background fixed top-0 right-0 left-0 z-110 hidden border-b-2 transition-opacity duration-100 md:block ${
-        isVisible ? "opacity-100" : "pointer-events-none opacity-0"
+      className={`border-border bg-page-background fixed top-0 right-0 left-0 z-110 hidden border-b-2 transition-all duration-300 md:block ${
+        isVisible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none -translate-y-full opacity-0"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
