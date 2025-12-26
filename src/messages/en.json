@@ -6,7 +6,15 @@
       "team": "TEAM"
     },
     "events": {
-      "poster": "POSTER {event}"
+      "poster": "POSTER {event}",
+      "seeAll": "SEE ALL EVENTS",
+      "registrationsOpen": "REGISTRATIONS OPEN",
+      "registrationsClosed": "REGISTRATIONS CLOSED",
+      "noUpcoming": "No upcoming events at the moment.",
+      "type": {
+        "tunnel": "TUNNEL",
+        "skydiving": "SKYDIVING"
+      }
     },
     "team": {
       "members": [

@@ -4,15 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build",
-    "check": "next lint && tsc --noEmit",
-    "dev": "next dev --turbo",
+    "build": "bun --bun next build",
+    "check": "bun --bun next lint && tsc --noEmit",
+    "dev": "bun --bun next dev --turbo",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "preview": "next build && next start",
-    "start": "next start",
+    "lint": "bun --bun next lint",
+    "lint:fix": "bun --bun next lint --fix",
+    "preview": "bun --bun next build && bun --bun next start",
+    "start": "bun --bun next start",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

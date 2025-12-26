@@ -6,7 +6,15 @@
       "team": "SQUADRA"
     },
     "events": {
-      "poster": "POSTER {event}"
+      "poster": "POSTER {event}",
+      "seeAll": "VEDI TUTTI GLI EVENTI",
+      "registrationsOpen": "ISCRIZIONI APERTE",
+      "registrationsClosed": "ISCRIZIONI CHIUSE",
+      "noUpcoming": "Nessun evento in programma al momento.",
+      "type": {
+        "tunnel": "TUNNEL",
+        "skydiving": "SKYDIVING"
+      }
     },
     "team": {
       "members": [

@@ -1,10 +1,22 @@
+import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { EventCard } from "~/components/event-card";
 import { HeroSection } from "~/components/hero-section";
 import { Navbar } from "~/components/navbar";
+import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
+import { getAllEvents } from "~/lib/events";
 
 export default async function Home() {
   const t = await getTranslations();
+
+  // Get all events and filter for upcoming ones
+  const allEvents = getAllEvents();
+  const now = new Date();
+  const upcomingEvents = allEvents
+    .filter((event) => new Date(event.date) >= now)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .slice(0, 3); // Show max 3 events on homepage
 
   return (
     <>
@@ -19,27 +31,30 @@ export default async function Home() {
               {t("home.sections.events")}
             </h2>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map((event) => (
-                <Card
-                  key={event}
-                  className="border-border bg-card overflow-hidden rounded-none border-2"
-                >
-                  {/* 4:5 vertical poster placeholder */}
-                  <div className="bg-muted relative aspect-4/5 w-full">
-                    <div className="text-muted-foreground absolute inset-0 flex items-center justify-center">
-                      {t("home.events.poster", { event })}
-                    </div>
-                  </div>
+            {upcomingEvents.length > 0 ? (
+              <>
+                <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 xl:grid-cols-2">
+                  {upcomingEvents.map((event) => (
+                    <EventCard key={event.id} event={event} />
+                  ))}
+                </div>
 
-                  <CardContent className="space-y-2 p-4">
-                    <div className="bg-muted h-4 w-3/4" />
-                    <div className="bg-muted h-3 w-1/2" />
-                    <div className="bg-muted h-3 w-2/3" />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                {/* See All Events Button */}
+                {allEvents.length > upcomingEvents.length && (
+                  <div className="mt-12 flex justify-center">
+                    <Link href="/events">
+                      <Button variant="outline" className="rounded-none">
+                        {t("home.events.seeAll")}
+                      </Button>
+                    </Link>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="text-muted-foreground text-center">
+                <p>{t("home.events.noUpcoming")}</p>
+              </div>
+            )}
           </div>
         </section>
 
