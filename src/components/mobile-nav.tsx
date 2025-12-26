@@ -48,7 +48,7 @@ export function MobileNav() {
                 height={80}
                 className="h-40 w-40"
               />
-              <span className="font-display text-primary text-center text-6xl/10 tracking-tight">
+              <span className="font-display text-primary text-center text-8xl/10 tracking-tight">
                 {t("navbar.teamName")
                   .split(" ")
                   .map((word, index) => (

@@ -29,17 +29,19 @@ export function Navbar() {
         isVisible ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4 py-4">
+      <div className="container mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo & Name */}
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo.svg"
-            alt={t("navbar.teamName")}
-            width={40}
-            height={40}
-            className="h-10 w-10"
-          />
-          <span className="font-display text-primary tracking- translate-y-1 self-center text-4xl">
+          <div className="h-10 w-10 overflow-clip">
+            <Image
+              src="/logo.svg"
+              alt={t("navbar.teamName")}
+              width={40}
+              height={40}
+              className="h-10 w-10 scale-120"
+            />
+          </div>
+          <span className="font-display text-primary tracking- translate-y-1 self-center text-5xl">
             {t("navbar.teamName")}
           </span>
         </Link>
