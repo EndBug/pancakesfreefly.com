@@ -1,9 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Link } from "~/i18n/navigation";
-import { EventCard } from "~/components/event-card";
 import { HeroSection } from "~/components/hero-section";
 import { Navbar } from "~/components/navbar";
-import { Button } from "~/components/ui/button";
+import { UpcomingEventsSection } from "~/components/upcoming-events-section";
 import { Card, CardContent } from "~/components/ui/card";
 import { getAllEvents } from "~/lib/events";
 
@@ -21,13 +19,7 @@ export default async function Home({
   // Explicitly pass locale to ensure correct translations during client-side navigation
   const t = await getTranslations({ locale });
 
-  // Get all events and filter for upcoming ones
   const allEvents = getAllEvents();
-  const now = new Date();
-  const upcomingEvents = allEvents
-    .filter((event) => new Date(event.date) >= now)
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    .slice(0, 3); // Show max 3 events on homepage
 
   return (
     <>
@@ -35,41 +27,7 @@ export default async function Home({
       <div className="bg-page-background min-h-screen">
         <HeroSection />
 
-        {/* Events Section */}
-        <section className="border-border bg-page-background border-b py-24">
-          <div className="container mx-auto px-4">
-            <h2 className="text-foreground mb-12 text-5xl font-bold tracking-tight md:text-6xl">
-              {t("home.sections.events")}
-            </h2>
-
-            {upcomingEvents.length > 0 ? (
-              <>
-                <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 xl:grid-cols-2">
-                  {upcomingEvents.map((event) => (
-                    <EventCard key={event.id} event={event} />
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="text-muted-foreground text-center">
-                <p>{t("home.events.noUpcoming")}</p>
-              </div>
-            )}
-            {/* See All Events Button */}
-            {allEvents.length > upcomingEvents.length && (
-              <div className="mt-12 flex justify-center">
-                <Link href="/events">
-                  <Button
-                    variant="outline"
-                    className="cursor-pointer rounded-none"
-                  >
-                    {t("home.events.seeAll")}
-                  </Button>
-                </Link>
-              </div>
-            )}
-          </div>
-        </section>
+        <UpcomingEventsSection allEvents={allEvents} />
 
         {/* Team Section */}
         <section className="border-border bg-page-background border-b py-24">

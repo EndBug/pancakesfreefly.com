@@ -1,5 +1,8 @@
+"use client";
+
+import { DateTime } from "luxon";
 import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "~/i18n/navigation";
 import { Badge } from "~/components/ui/badge";
 import { Card, CardContent } from "~/components/ui/card";
@@ -9,29 +12,22 @@ interface EventCardProps {
   event: Event;
 }
 
-export async function EventCard({ event }: EventCardProps) {
-  const t = await getTranslations();
-  const locale = await getLocale();
-  const now = new Date();
-  const registrationDeadline = new Date(event.registrationDeadline);
+export function EventCard({ event }: EventCardProps) {
+  const t = useTranslations();
+  const locale = useLocale();
 
-  // Format dates
-  const startDate = new Date(event.date);
-  const endDate = event.endDate ? new Date(event.endDate) : null;
+  const now = DateTime.now();
+  const today = now.startOf("day");
+  const startDate = DateTime.fromISO(event.date);
+  const endDate = event.endDate ? DateTime.fromISO(event.endDate) : null;
+  const registrationDeadline = DateTime.fromISO(event.registrationDeadline);
 
-  // Check if event is in the past
-  const eventEndDate = endDate ?? startDate;
-  const isPastEvent = eventEndDate < now;
-
-  // Only show registration status for upcoming events
+  const effectiveEnd = endDate ?? startDate;
+  const isPastEvent = effectiveEnd < today;
   const registrationsOpen = !isPastEvent && now < registrationDeadline;
 
-  const formatDate = (date: Date) => {
-    return new Intl.DateTimeFormat(locale, {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    }).format(date);
+  const formatDate = (dt: DateTime) => {
+    return dt.setLocale(locale).toLocaleString(DateTime.DATE_MED);
   };
 
   const dateDisplay = endDate

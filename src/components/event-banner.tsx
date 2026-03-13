@@ -1,7 +1,10 @@
+"use client";
+
+import { DateTime } from "luxon";
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { getLocale, getTranslations } from "next-intl/server";
+import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "~/components/ui/badge";
 import { ContactType, type Event } from "~/lib/events";
 
@@ -9,25 +12,23 @@ interface EventBannerProps {
   event: Event;
 }
 
-export async function EventBanner({ event }: EventBannerProps) {
-  const locale = await getLocale();
-  const t = await getTranslations({ locale });
+export function EventBanner({ event }: EventBannerProps) {
+  const locale = useLocale();
+  const t = useTranslations();
 
-  const formatDate = (date: Date) => {
-    return new Intl.DateTimeFormat(locale, {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }).format(date);
-  };
+  const now = DateTime.now();
+  const today = now.startOf("day");
+  const startDate = DateTime.fromISO(event.date);
+  const endDate = event.endDate ? DateTime.fromISO(event.endDate) : null;
+  const registrationDeadline = DateTime.fromISO(event.registrationDeadline);
 
-  const startDate = new Date(event.date);
-  const endDate = event.endDate ? new Date(event.endDate) : null;
-  const registrationDeadline = new Date(event.registrationDeadline);
-  const now = new Date();
-
+  const effectiveEnd = endDate ?? startDate;
   const isRegistrationOpen = now < registrationDeadline;
-  const isPastEvent = endDate ? endDate < now : startDate < now;
+  const isPastEvent = effectiveEnd < today;
+
+  const formatDate = (dt: DateTime) => {
+    return dt.setLocale(locale).toLocaleString(DateTime.DATE_FULL);
+  };
 
   // Default contacts that should always be displayed
   const defaultContacts = [
@@ -143,7 +144,7 @@ export async function EventBanner({ event }: EventBannerProps) {
               </h3>
               <p className="text-foreground">
                 {formatDate(startDate)}
-                {endDate && startDate.getTime() !== endDate.getTime() && (
+                {endDate && startDate.toMillis() !== endDate.toMillis() && (
                   <>
                     {" – "}
                     {formatDate(endDate)}
