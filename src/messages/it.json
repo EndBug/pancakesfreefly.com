@@ -112,6 +112,35 @@
       "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
     }
   },
+  "contact": {
+    "title": "CONTATTACI",
+    "primary": {
+      "heading": "SCRIVICI",
+      "description": "Il modo migliore per raggiungerci è tramite DM su Instagram o email.",
+      "instagram": "SCRIVICI SU INSTAGRAM",
+      "email": "MANDACI UNA EMAIL"
+    },
+    "team": {
+      "heading": "CONTATTA UNO DI NOI",
+      "members": [
+        {
+          "name": "Chiara",
+          "instagram": "https://instagram.com/ferrero_chiara",
+          "handle": "@ferrero_chiara"
+        },
+        {
+          "name": "Fede",
+          "instagram": "https://instagram.com/federico.grandi_",
+          "handle": "@federico.grandi_"
+        },
+        {
+          "name": "Pier",
+          "instagram": "https://instagram.com/pier_andrea.ag",
+          "handle": "@pier_andrea.ag"
+        }
+      ]
+    }
+  },
   "metadata": {
     "title": "PanCakes Freefly",
     "description": "Eventi di tunnel e skydiving in Italia e Europa"
