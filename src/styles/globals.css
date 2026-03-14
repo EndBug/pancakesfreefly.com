@@ -270,3 +270,61 @@
 .group\/card:hover .border-reveal-left {
   animation: border-reveal-left 0.1s ease-out 0.3s forwards;
 }
+
+/* Hero title: hidden until initial delay, then stroke draws and fill appears */
+@keyframes hero-title-reveal {
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-title-reveal {
+  opacity: 0;
+  animation: hero-title-reveal 0s ease-out var(--hero-initial-delay, 400ms)
+    forwards;
+}
+
+@keyframes hero-title-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hero-title-fill-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-title-path {
+  animation: hero-title-draw var(--hero-duration, 1.8s) ease-out forwards;
+  stroke-dashoffset: 1;
+}
+
+.hero-title-fill {
+  opacity: 0;
+  animation: hero-title-fill-in 0.28s ease-out 2s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-reveal {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero-title-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .hero-title-fill {
+    animation: none;
+    opacity: 1;
+  }
+}

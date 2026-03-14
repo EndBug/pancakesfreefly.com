@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Link } from "~/i18n/navigation";
 import { ChevronDown } from "lucide-react";
 import { cn } from "~/lib/utils";
+import { HeroTitle } from "./hero-title";
 
 type StreamRow = {
   images: string[];
@@ -127,8 +128,7 @@ export function HeroSection() {
           >
             {[...row.images, ...row.images].map((src, imgIdx) => {
               const isPriority =
-                (rowIdx === 0 && imgIdx < 4) ||
-                (rowIdx === 1 && imgIdx < 2);
+                (rowIdx === 0 && imgIdx < 4) || (rowIdx === 1 && imgIdx < 2);
               return (
                 <div
                   key={`${rowIdx}-${imgIdx}`}
@@ -166,11 +166,10 @@ export function HeroSection() {
         }}
       />
 
-      {/* Team Name - top left */}
-      <div className="absolute top-4 left-4 z-10 md:top-8 md:left-8">
-        <span className="font-display text-primary translate-y-1 text-8xl/16 tracking-tight [text-shadow:3px_3px_0px_var(--card)]">
-          {t("navbar.teamName")}
-        </span>
+      {/* Team Name - top left (handwritten SVG animation) */}
+      <div className="absolute top-4 left-4 z-10 w-[min(90vw,22rem)] md:top-8 md:left-8 md:w-[26rem]">
+        <HeroTitle />
+        {/* <span className="sr-only">{t("navbar.teamName")}</span> */}
       </div>
 
       {/* Links - bottom right */}
