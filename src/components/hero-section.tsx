@@ -176,7 +176,7 @@ export function HeroSection() {
       <div className="absolute right-4 bottom-6 z-10 flex flex-col gap-4 md:right-8 md:bottom-10 md:flex-row">
         <Link
           href="/events"
-          className="border-border bg-page-background/65 hover:bg-page-background/80 text-foreground block border-2 p-6 backdrop-blur-sm transition-colors"
+          className="border-border bg-page-background/65 hover:bg-page-background/80 text-foreground block w-fit self-end border-2 p-6 backdrop-blur-sm transition-colors md:self-auto"
         >
           <div className="text-foreground text-3xl font-bold tracking-tight">
             {t("home.sections.events")}
