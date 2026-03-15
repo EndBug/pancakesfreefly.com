@@ -293,6 +293,19 @@
   }
 }
 
+/* Opacity jumps at 1% with no interpolation (steps prevent gradual fade) */
+@keyframes hero-title-path-opacity {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes hero-title-fill-in {
   from {
     opacity: 0;
@@ -303,7 +316,10 @@
 }
 
 .hero-title-path {
-  animation: hero-title-draw var(--hero-duration, 1.8s) ease-out forwards;
+  opacity: 0;
+  animation:
+    hero-title-draw var(--hero-duration, 1.8s) ease-out forwards,
+    hero-title-path-opacity var(--hero-duration, 1.8s) steps(100, end) forwards;
   stroke-dashoffset: 1;
 }
 
@@ -320,6 +336,7 @@
 
   .hero-title-path {
     animation: none;
+    opacity: 1;
     stroke-dashoffset: 0;
   }
 

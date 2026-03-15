@@ -12,7 +12,9 @@ import { HERO_STREAM_ROWS } from "~/lib/hero-stream-config";
 export function HeroSection() {
   const t = useTranslations();
   const [scrollOpacity, setScrollOpacity] = useState(1);
-  const [loadedImageKeys, setLoadedImageKeys] = useState<Set<string>>(new Set());
+  const [loadedImageKeys, setLoadedImageKeys] = useState<Set<string>>(
+    new Set(),
+  );
 
   const markImageLoaded = (key: string) => {
     setLoadedImageKeys((prev) => new Set(prev).add(key));
@@ -108,8 +110,8 @@ export function HeroSection() {
         }}
       />
 
-      {/* Team Name - top left (handwritten SVG animation) */}
-      <div className="absolute top-4 left-4 z-10 w-[min(90vw,22rem)] md:top-8 md:left-8 md:w-[26rem]">
+      {/* Team Name - centered on mobile, top left on desktop */}
+      <div className="absolute top-1/2 left-1/2 z-10 w-[min(90vw,22rem)] -translate-x-1/2 -translate-y-1/2 md:top-8 md:left-8 md:w-[32rem] md:translate-x-0 md:translate-y-0">
         <HeroTitle />
         {/* <span className="sr-only">{t("navbar.teamName")}</span> */}
       </div>

@@ -17,7 +17,7 @@ const FILL_DELAY_AFTER_STROKE_MS = 60;
 export function HeroTitle() {
   return (
     <svg
-      className="h-auto w-full max-w-[min(90vw,24rem)] translate-y-1"
+      className="h-auto w-full max-w-[min(90vw,24rem)] translate-y-1 md:max-w-none"
       viewBox={heroTitleViewBox}
       preserveAspectRatio="xMinYMid meet"
       fill="none"
@@ -28,6 +28,13 @@ export function HeroTitle() {
       }}
       aria-hidden
     >
+      <defs>
+        {PATHS.map((d, i) => (
+          <clipPath key={i} id={`hero-title-stroke-clip-${i}`}>
+            <path d={d} />
+          </clipPath>
+        ))}
+      </defs>
       <g className="hero-title-reveal">
         {PATHS.map((d, i) => {
           const strokeDelay = INITIAL_DELAY_MS + i * STAGGER_MS;
@@ -45,16 +52,17 @@ export function HeroTitle() {
                   animationDuration: `${FILL_DURATION_MS}ms`,
                 }}
               />
-              {/* Stroke: draws along the path (handwritten outline) */}
+              {/* Stroke: draws along the path, clipped to inside of shape */}
               <path
                 d={d}
                 pathLength={1}
                 strokeDasharray={1}
                 stroke="currentColor"
-                strokeWidth={0.5}
+                strokeWidth={2}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 fill="none"
+                clipPath={`url(#hero-title-stroke-clip-${i})`}
                 className="hero-title-path"
                 style={
                   {
