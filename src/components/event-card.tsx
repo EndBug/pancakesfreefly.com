@@ -3,9 +3,11 @@
 import { DateTime } from "luxon";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
 import { Link } from "~/i18n/navigation";
 import { Badge } from "~/components/ui/badge";
 import { Card, CardContent } from "~/components/ui/card";
+import { cn } from "~/lib/utils";
 import { type Event } from "~/lib/events";
 
 interface EventCardProps {
@@ -15,6 +17,7 @@ interface EventCardProps {
 export function EventCard({ event }: EventCardProps) {
   const t = useTranslations();
   const locale = useLocale();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const now = DateTime.now();
   const today = now.startOf("day");
@@ -66,7 +69,11 @@ export function EventCard({ event }: EventCardProps) {
             src={event.imageUrl}
             alt={event.title}
             fill
-            className="object-cover sm:object-contain"
+            className={cn(
+              "object-cover transition-opacity duration-300 sm:object-contain",
+              imageLoaded ? "opacity-100" : "opacity-0",
+            )}
+            onLoad={() => setImageLoaded(true)}
           />
         </div>
 

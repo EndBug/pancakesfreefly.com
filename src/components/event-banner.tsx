@@ -4,9 +4,11 @@ import { DateTime } from "luxon";
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "~/components/ui/badge";
 import { ContactType, type Event } from "~/lib/events";
+import { cn } from "~/lib/utils";
 
 interface EventBannerProps {
   event: Event;
@@ -15,6 +17,7 @@ interface EventBannerProps {
 export function EventBanner({ event }: EventBannerProps) {
   const locale = useLocale();
   const t = useTranslations();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const now = DateTime.now();
   const today = now.startOf("day");
@@ -112,8 +115,12 @@ export function EventBanner({ event }: EventBannerProps) {
             src={event.imageUrl}
             alt={event.title}
             fill
-            className="object-cover"
+            className={cn(
+              "object-cover transition-opacity duration-300",
+              imageLoaded ? "opacity-100" : "opacity-0",
+            )}
             sizes="(max-width: 1024px) 100vw, 40vw"
+            onLoad={() => setImageLoaded(true)}
           />
         </div>
 

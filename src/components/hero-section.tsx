@@ -7,80 +7,16 @@ import { Link } from "~/i18n/navigation";
 import { ChevronDown } from "lucide-react";
 import { cn } from "~/lib/utils";
 import { HeroTitle } from "./hero-title";
-
-type StreamRow = {
-  images: string[];
-  direction: "left" | "right";
-  duration: number;
-  entranceDelay: number;
-  hiddenOnMobile?: boolean;
-};
-
-const STREAM_ROWS: StreamRow[] = [
-  {
-    direction: "left",
-    duration: 80,
-    entranceDelay: 0,
-    images: [
-      "/images/hero-section/high/001.png",
-      "/images/hero-section/low/001.png",
-      "/images/hero-section/high/005.png",
-      "/images/hero-section/high/009.png",
-      "/images/hero-section/low/005.png",
-      "/images/hero-section/high/013.png",
-      "/images/hero-section/high/003.png",
-      "/images/hero-section/low/009.png",
-    ],
-  },
-  {
-    direction: "right",
-    duration: 100,
-    entranceDelay: 200,
-    images: [
-      "/images/hero-section/high/002.png",
-      "/images/hero-section/high/006.png",
-      "/images/hero-section/low/002.png",
-      "/images/hero-section/high/010.png",
-      "/images/hero-section/high/014.png",
-      "/images/hero-section/low/006.png",
-      "/images/hero-section/high/004.png",
-      "/images/hero-section/low/010.png",
-    ],
-  },
-  {
-    direction: "left",
-    duration: 70,
-    entranceDelay: 400,
-    images: [
-      "/images/hero-section/high/007.png",
-      "/images/hero-section/low/003.png",
-      "/images/hero-section/high/011.png",
-      "/images/hero-section/high/015.png",
-      "/images/hero-section/low/007.png",
-      "/images/hero-section/high/017.png",
-      "/images/hero-section/low/011.png",
-    ],
-  },
-  {
-    direction: "right",
-    duration: 90,
-    entranceDelay: 600,
-    hiddenOnMobile: true,
-    images: [
-      "/images/hero-section/high/008.png",
-      "/images/hero-section/low/004.png",
-      "/images/hero-section/high/012.png",
-      "/images/hero-section/high/016.png",
-      "/images/hero-section/low/008.png",
-      "/images/hero-section/low/012.png",
-      "/images/hero-section/low/013.png",
-    ],
-  },
-];
+import { HERO_STREAM_ROWS } from "~/lib/hero-stream-config";
 
 export function HeroSection() {
   const t = useTranslations();
   const [scrollOpacity, setScrollOpacity] = useState(1);
+  const [loadedImageKeys, setLoadedImageKeys] = useState<Set<string>>(new Set());
+
+  const markImageLoaded = (key: string) => {
+    setLoadedImageKeys((prev) => new Set(prev).add(key));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,7 +40,7 @@ export function HeroSection() {
   return (
     <section className="border-border bg-page-background relative flex h-dvh w-full flex-col justify-center gap-3 overflow-hidden border-b">
       {/* Photo streams */}
-      {STREAM_ROWS.map((row, rowIdx) => (
+      {HERO_STREAM_ROWS.map((row, rowIdx) => (
         <div
           key={rowIdx}
           className={cn(
@@ -129,18 +65,24 @@ export function HeroSection() {
             {[...row.images, ...row.images].map((src, imgIdx) => {
               const isPriority =
                 (rowIdx === 0 && imgIdx < 4) || (rowIdx === 1 && imgIdx < 2);
+              const imageKey = `${rowIdx}-${imgIdx}`;
+              const isLoaded = loadedImageKeys.has(imageKey);
               return (
                 <div
-                  key={`${rowIdx}-${imgIdx}`}
+                  key={imageKey}
                   className="relative aspect-video h-[28vh] shrink-0 md:h-[22vh]"
                 >
                   <Image
                     src={src}
                     alt=""
                     fill
-                    className="object-cover"
+                    className={cn(
+                      "object-cover transition-opacity duration-300",
+                      isLoaded ? "opacity-100" : "opacity-0",
+                    )}
                     sizes="(max-width: 767px) 50vw, 39vw"
                     priority={isPriority}
+                    onLoad={() => markImageLoaded(imageKey)}
                   />
                 </div>
               );
