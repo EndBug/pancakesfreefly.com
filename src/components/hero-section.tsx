@@ -110,8 +110,8 @@ export function HeroSection() {
         }}
       />
 
-      {/* Team Name - centered on mobile, top left on desktop */}
-      <div className="absolute top-1/2 left-1/2 z-10 w-[min(90vw,22rem)] -translate-x-1/2 -translate-y-1/2 md:top-8 md:left-8 md:w-[32rem] md:translate-x-0 md:translate-y-0">
+      {/* Team Name - centered on mobile (two lines, larger), top left on desktop */}
+      <div className="absolute top-1/2 left-1/2 z-10 w-[min(92vw,28rem)] -translate-x-1/2 -translate-y-1/2 md:top-14 md:left-8 md:w-[32rem] md:translate-x-0 md:translate-y-0">
         <HeroTitle />
         {/* <span className="sr-only">{t("navbar.teamName")}</span> */}
       </div>

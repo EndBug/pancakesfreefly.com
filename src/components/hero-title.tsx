@@ -1,48 +1,57 @@
 "use client";
 
 import {
-  heroTitlePathData,
-  heroTitleViewBox,
+  heroTitleLine1PathData,
+  heroTitleLine1ViewBox,
+  heroTitleLine2PathData,
+  heroTitleLine2ViewBox,
 } from "~/_generated/hero-title-paths";
-
-const PATHS = heroTitlePathData.filter((d) => d.length > 0);
 
 const INITIAL_DELAY_MS = 400;
 const DURATION_MS = 1800;
 const STAGGER_MS = 100;
 const FILL_DURATION_MS = 280;
-/** Fill starts appearing after the stroke has finished for this path */
 const FILL_DELAY_AFTER_STROKE_MS = 60;
 
-export function HeroTitle() {
+const svgStyle: React.CSSProperties = {
+  color: "var(--primary)",
+  filter: "drop-shadow(2px 2px 0 var(--card))",
+  ["--hero-initial-delay" as string]: `${INITIAL_DELAY_MS}ms`,
+};
+
+type TitleSvgProps = {
+  paths: string[];
+  viewBox: string;
+  clipPrefix: string;
+  /** Global index for stagger (line1: 0..6, line2: 7..13) */
+  startIndex: number;
+};
+
+function TitleSvg({ paths, viewBox, clipPrefix, startIndex }: TitleSvgProps) {
   return (
     <svg
-      className="h-auto w-full max-w-[min(90vw,24rem)] translate-y-1 md:max-w-none"
-      viewBox={heroTitleViewBox}
+      className="h-24 w-auto max-w-[85vw] translate-y-1 md:h-24 md:max-w-none md:translate-y-0"
+      viewBox={viewBox}
       preserveAspectRatio="xMinYMid meet"
       fill="none"
-      style={{
-        color: "var(--primary)",
-        filter: "drop-shadow(2px 2px 0 var(--card))",
-        ["--hero-initial-delay" as string]: `${INITIAL_DELAY_MS}ms`,
-      }}
+      style={svgStyle}
       aria-hidden
     >
       <defs>
-        {PATHS.map((d, i) => (
-          <clipPath key={i} id={`hero-title-stroke-clip-${i}`}>
+        {paths.map((d, i) => (
+          <clipPath key={i} id={`${clipPrefix}-${i}`}>
             <path d={d} />
           </clipPath>
         ))}
       </defs>
       <g className="hero-title-reveal">
-        {PATHS.map((d, i) => {
+        {paths.map((d, j) => {
+          const i = startIndex + j;
           const strokeDelay = INITIAL_DELAY_MS + i * STAGGER_MS;
           const fillDelay =
             strokeDelay + DURATION_MS + FILL_DELAY_AFTER_STROKE_MS;
           return (
             <g key={i}>
-              {/* Fill: appears after the stroke has drawn */}
               <path
                 d={d}
                 fill="currentColor"
@@ -52,7 +61,6 @@ export function HeroTitle() {
                   animationDuration: `${FILL_DURATION_MS}ms`,
                 }}
               />
-              {/* Stroke: draws along the path, clipped to inside of shape */}
               <path
                 d={d}
                 pathLength={1}
@@ -62,7 +70,7 @@ export function HeroTitle() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 fill="none"
-                clipPath={`url(#hero-title-stroke-clip-${i})`}
+                clipPath={`url(#${clipPrefix}-${j})`}
                 className="hero-title-path"
                 style={
                   {
@@ -76,5 +84,27 @@ export function HeroTitle() {
         })}
       </g>
     </svg>
+  );
+}
+
+export function HeroTitle() {
+  return (
+    <div className="flex w-full max-w-[min(92vw,28rem)] flex-col items-center justify-center gap-0 md:max-w-none md:flex-row">
+      <TitleSvg
+        paths={heroTitleLine1PathData}
+        viewBox={heroTitleLine1ViewBox}
+        clipPrefix="hero-title-l1-clip"
+        startIndex={0}
+      />
+      {/* Negative margin pulls second word closer (equivalent to negative gap) */}
+      <div className="-mt-8 md:mt-0 md:-ml-3">
+        <TitleSvg
+          paths={heroTitleLine2PathData}
+          viewBox={heroTitleLine2ViewBox}
+          clipPrefix="hero-title-l2-clip"
+          startIndex={7}
+        />
+      </div>
+    </div>
   );
 }
