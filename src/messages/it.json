@@ -111,6 +111,35 @@
       "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
       "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
     },
+    "sundaySharingJan26": {
+      "intro": "Hey flyers!",
+      "newDate": "Ecco una nuova data per iniziare l'anno nel migliore dei modi! 🍻",
+      "winter": "L'inverno è arrivato e la domenica si finisce presto di saltare purtroppo. 🧊❄️🧤",
+      "purpose": "Per questo abbiamo pensato a questo evento dove potete ritrovarvi per volare in gruppo, allenarvi e soprattutto divertirvi in attesa che torni la bella stagione. 🪂",
+      "whenAndWhere": "Quando e dove?",
+      "dateTime": "<strong>25 gennaio 2026, ritrovo alle 17:30 in Aero Gravity</strong>",
+      "whatIncludes": "Cosa include il Sunday Sharing?",
+      "mobilitySession": "🧘‍♀️ Una <strong>sessione di mobilità</strong> di 45' minuti tenuta dalla nostra coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimo <strong>30 minuti</strong> di volo in un gruppo da 4+1 adatto al tuo livello",
+      "pizzaBeer": "🍺🍕 <strong>Pizza e birra</strong> alla fine dell'evento",
+      "price": "💸 Il prezzo per l'evento è di 140 euro a persona.",
+      "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
+      "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
+    },
+    "sundaySharingFeb26": {
+      "intro": "Hey flyers!",
+      "winter": "L'inverno è arrivato e la domenica si finisce presto di saltare purtroppo. 🧊❄️🧤",
+      "purpose": "Per questo abbiamo pensato a questo evento dove potete ritrovarvi per volare in gruppo, allenarvi e soprattutto divertirvi in attesa che torni la bella stagione. 🪂",
+      "whenAndWhere": "Quando e dove?",
+      "dateTime": "<strong>15 febbraio 2026, ritrovo alle 18:30 in Aero Gravity</strong>",
+      "whatIncludes": "Cosa include il Sunday Sharing?",
+      "mobilitySession": "🧘‍♀️ Una <strong>sessione di mobilità</strong> di 45' minuti tenuta dalla nostra coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimo <strong>30 minuti</strong> di volo in un gruppo da 4+1 adatto al tuo livello",
+      "pizzaBeer": "🍺🍕 <strong>Pizza e birra</strong> alla fine dell'evento",
+      "price": "💸 Il prezzo per l'evento è di 140 euro a persona.",
+      "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
+      "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
+    },
     "pancakesOnTheBeachJul26": {
       "intro": "Ciao flyers! Vi presentiamo il nostro evento estivo \"PanCakes on the Beach\" in collaborazione con Aero Gravity e Skydive Pull Out Ravenna.",
       "whereHeading": "Dove?",
