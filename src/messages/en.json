@@ -110,6 +110,32 @@
       "price": "💸 The price for the event is 140 euros per person.",
       "registrationInfo": "To register for the event you will need to fill out the form below, which will also help us understand which group is most suitable for you. Once completed, we will contact you to confirm your participation.",
       "contactInfo": "For any other information, please don't hesitate to contact us at the profiles indicated above."
+    },
+    "pancakesOnTheBeachJul26": {
+      "intro": "Hello flyers! We present our summer event \"PanCakes on the Beach\" in collaboration with Aero Gravity and Skydive Pull Out Ravenna.",
+      "whereHeading": "Where?",
+      "whereDay1": "July 3, 2026 — Aero Gravity, Milano",
+      "whereDays2_4": "July 4–6, 2026 — Skydive Pull Out, Ravenna",
+      "coachesHeading": "Coaches",
+      "coaches": [
+        { "name": "Dani Gallego", "instagram": "https://www.instagram.com/danigallego/" },
+        { "name": "Luca Giovannini", "instagram": "https://www.instagram.com/lucagiovannini_lg/" },
+        { "name": "Rob Jones", "instagram": "https://www.instagram.com/robjones/" },
+        { "name": "Lamberto Micangeli", "instagram": "https://www.instagram.com/lamberromicangeli/" }
+      ],
+      "groupsAndJumps": "6+1 groups. 6 jumps per day guaranteed.",
+      "priceHeading": "Registration price",
+      "priceAmount": "429€ — what's included?",
+      "priceJam": "90 minutes jam session at Aero Gravity",
+      "priceJumps": "3 days of jumps with the coaches",
+      "priceGoodie": "Goodie bag from event sponsors (Aero Gravity Milano & Skydive Pull Out Ravenna)",
+      "ticketPrice": "Aircraft ticket: 39€ with Cessna Caravan 208 at 4500 m",
+      "scheduleHeading": "Schedule",
+      "scheduleFriday": "Friday July 3, 2026 — Aero Gravity Milano. Jam starts at 10:30, 90 minutes total.",
+      "scheduleSaturday": "Saturday July 4, 2026 — Meet at 08:00 at Skydive Pull Out Ravenna",
+      "scheduleSunday": "Sunday July 5, 2026 — Meet at 08:00 at Skydive Pull Out Ravenna",
+      "scheduleMonday": "Monday July 6, 2026 — Meet at 08:00 at Skydive Pull Out Ravenna",
+      "videoHeading": "Last edition"
     }
   },
   "contact": {
