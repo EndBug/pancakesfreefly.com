@@ -1,0 +1,40 @@
+import { type Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { EventLayout } from "~/components/event-layout";
+import { getEventById } from "~/lib/events";
+
+export const dynamic = "force-static";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  const event = getEventById("flytribe-malmo-jan26");
+
+  if (!event) {
+    return {
+      title: t("metadata.title"),
+      description: t("metadata.description"),
+    };
+  }
+
+  return {
+    title: `${event.title} | ${t("metadata.title")}`,
+    description: `${event.title} - ${event.location} - ${t("metadata.description")}`,
+  };
+}
+
+export default async function FlytribeMalmoJan26Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  return <EventLayout eventId="flytribe-malmo-jan26">{null}</EventLayout>;
+}

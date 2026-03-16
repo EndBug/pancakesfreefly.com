@@ -121,6 +121,20 @@ export const rawEventsData = [
     ],
   },
   {
+    id: "flytribe-malmo-jan26",
+    title: "Skill Camp",
+    type: ["tunnel"],
+    date: "2026-01-12",
+    endDate: "2026-01-18",
+    location: "FlyTribe Malmö | Malmö, SE",
+    registrationDeadline: "2026-01-11T23:59:59+01:00",
+    imageUrl: "/images/events/fooni-feb24.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
+  },
+  {
     id: "sunday-sharing-feb26",
     title: "Sunday Sharing",
     type: ["tunnel"],
