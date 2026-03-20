@@ -1,7 +1,7 @@
 "use client";
 
 import { parsePhoneNumberFromString } from "libphonenumber-js";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import { useForm, useStore } from "@tanstack/react-form";
 import { z } from "zod";
@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
+import { api } from "~/trpc/react";
 
 const FORMATION_OPTIONS = ["2-4", "5-7", "8+"] as const;
 const TSHIRT_OPTIONS = ["XS", "S", "M", "L", "XL", "XXL"] as const;
@@ -84,14 +85,11 @@ function createFormSchema(t: (key: string) => string) {
         1,
         t("event.pancakesOnTheBeachJul26.registrationForm.validation.required"),
       )
-      .refine(
-        (val) => {
-          const defaultCountry = val.startsWith("+") ? undefined : "IT";
-          const parsed = parsePhoneNumberFromString(val, defaultCountry);
-          return parsed?.isValid() ?? false;
-        },
-        t("event.pancakesOnTheBeachJul26.registrationForm.validation.invalidPhone"),
-      ),
+      .refine((val) => {
+        const defaultCountry = val.startsWith("+") ? undefined : "IT";
+        const parsed = parsePhoneNumberFromString(val, defaultCountry);
+        return parsed?.isValid() ?? false;
+      }, t("event.pancakesOnTheBeachJul26.registrationForm.validation.invalidPhone")),
     email: z
       .string()
       .min(
@@ -162,7 +160,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
   registrationDeadline: string;
 }) {
   const t = useTranslations();
+  const locale = useLocale();
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -180,6 +180,7 @@ export function PancakesOnTheBeachRegistrationForm(props: {
     Date.now() > registrationDeadlineMs;
 
   const formSchema = createFormSchema(t);
+  const submitForm = api.pancakesOnTheBeach.submit.useMutation();
 
   const form = useForm({
     defaultValues,
@@ -202,15 +203,38 @@ export function PancakesOnTheBeachRegistrationForm(props: {
       },
     },
     onSubmit: async ({ value }) => {
-      let phone = value.phone;
+      const validated = formSchema.parse(value);
+
+      let phone = validated.phone;
       if (phone) {
         const defaultCountry = phone.startsWith("+") ? undefined : "IT";
         const parsed = parsePhoneNumberFromString(phone, defaultCountry);
         phone = parsed?.format("E.164") ?? phone;
       }
-      const payload = { ...value, phone };
-      console.log(">>>", payload);
-      setSubmitSuccess(true);
+      const language = locale === "en" ? "en" : "it";
+      setSubmitSuccess(false);
+      setSubmitError(false);
+
+      try {
+        await submitForm.mutateAsync({
+          firstName: validated.firstName,
+          lastName: validated.lastName,
+          phone,
+          email: validated.email,
+          jumpsCount: validated.jumpsCount,
+          tunnelHours: validated.tunnelHours,
+          biggestFormationHeadFirst: validated.biggestFormationHeadFirst,
+          biggestFormationFeetFirst: validated.biggestFormationFeetFirst,
+          igProfile: validated.igProfile,
+          tShirtSize: validated.tShirtSize,
+          rideMilanoToRavenna: validated.rideMilanoToRavenna,
+          rideRavennaToMilano: validated.rideRavennaToMilano,
+          language,
+        });
+        setSubmitSuccess(true);
+      } catch {
+        setSubmitError(true);
+      }
     },
   });
 
@@ -227,7 +251,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
         id="registrationForm"
         className="absolute -top-16 right-0 left-0 sm:-top-23"
       />
-      <h2 className="text-2xl font-semibold">{t("event.pancakesOnTheBeachJul26.registrationForm.title")}</h2>
+      <h2 className="text-2xl font-semibold">
+        {t("event.pancakesOnTheBeachJul26.registrationForm.title")}
+      </h2>
 
       <form
         onSubmit={async (e) => {
@@ -249,12 +275,20 @@ export function PancakesOnTheBeachRegistrationForm(props: {
         {/* Question 1: Requirements + checkbox — always visible */}
         <div className="space-y-3">
           <p className="text-sm font-medium">
-            {t("event.pancakesOnTheBeachJul26.registrationForm.requirementsQuestion")}
+            {t(
+              "event.pancakesOnTheBeachJul26.registrationForm.requirementsQuestion",
+            )}
           </p>
           <ul className="text-muted-foreground list-inside list-disc space-y-1 text-sm">
-            <li>{t("event.pancakesOnTheBeachJul26.registrationForm.requirementsBullet1")}</li>
             <li>
-              {t("event.pancakesOnTheBeachJul26.registrationForm.requirementsBullet2")}
+              {t(
+                "event.pancakesOnTheBeachJul26.registrationForm.requirementsBullet1",
+              )}
+            </li>
+            <li>
+              {t(
+                "event.pancakesOnTheBeachJul26.registrationForm.requirementsBullet2",
+              )}
               <ul className="list-inside list-disc pl-4">
                 <li>
                   {t(
@@ -274,7 +308,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
               </ul>
             </li>
             <li>
-              {t("event.pancakesOnTheBeachJul26.registrationForm.requirementsBullet3")}
+              {t(
+                "event.pancakesOnTheBeachJul26.registrationForm.requirementsBullet3",
+              )}
               <ul className="list-inside list-disc pl-4">
                 <li>
                   {t(
@@ -293,7 +329,11 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                 </li>
               </ul>
             </li>
-            <li>{t("event.pancakesOnTheBeachJul26.registrationForm.requirementsBullet4")}</li>
+            <li>
+              {t(
+                "event.pancakesOnTheBeachJul26.registrationForm.requirementsBullet4",
+              )}
+            </li>
           </ul>
           <form.Field name="requirementsAccepted">
             {(field) => {
@@ -319,7 +359,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                       htmlFor="requirementsAccepted"
                       className="cursor-pointer text-sm font-medium"
                     >
-                      {t("event.pancakesOnTheBeachJul26.registrationForm.requirementsCheckboxLabel")}
+                      {t(
+                        "event.pancakesOnTheBeachJul26.registrationForm.requirementsCheckboxLabel",
+                      )}
                     </Label>
                   </div>
                   {errorMessage && (
@@ -349,7 +391,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                         htmlFor="firstName"
                         className="text-sm font-medium"
                       >
-                        {t("event.pancakesOnTheBeachJul26.registrationForm.firstName")}{" "}
+                        {t(
+                          "event.pancakesOnTheBeachJul26.registrationForm.firstName",
+                        )}{" "}
                         <span className="text-primary" aria-hidden="true">
                           *
                         </span>
@@ -384,7 +428,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                   return (
                     <div className="space-y-2">
                       <Label htmlFor="lastName" className="text-sm font-medium">
-                        {t("event.pancakesOnTheBeachJul26.registrationForm.lastName")}{" "}
+                        {t(
+                          "event.pancakesOnTheBeachJul26.registrationForm.lastName",
+                        )}{" "}
                         <span className="text-primary" aria-hidden="true">
                           *
                         </span>
@@ -421,7 +467,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                 return (
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-sm font-medium">
-                      {t("event.pancakesOnTheBeachJul26.registrationForm.phone")}{" "}
+                      {t(
+                        "event.pancakesOnTheBeachJul26.registrationForm.phone",
+                      )}{" "}
                       <span className="text-primary" aria-hidden="true">
                         *
                       </span>
@@ -438,7 +486,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                         const raw = e.target.value;
                         const allowed = raw.replace(/[^\d+\s]/g, "");
                         const hasPlus = allowed.startsWith("+");
-                        const rest = allowed.replace(/^\+?/, "").replace(/\+/g, "");
+                        const rest = allowed
+                          .replace(/^\+?/, "")
+                          .replace(/\+/g, "");
                         const next = hasPlus ? "+" + rest : rest;
                         field.handleChange(next);
                       }}
@@ -464,7 +514,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                 return (
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-sm font-medium">
-                      {t("event.pancakesOnTheBeachJul26.registrationForm.email")}{" "}
+                      {t(
+                        "event.pancakesOnTheBeachJul26.registrationForm.email",
+                      )}{" "}
                       <span className="text-primary" aria-hidden="true">
                         *
                       </span>
@@ -503,7 +555,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                         htmlFor="jumpsCount"
                         className="text-sm font-medium"
                       >
-                        {t("event.pancakesOnTheBeachJul26.registrationForm.jumpsCount")}{" "}
+                        {t(
+                          "event.pancakesOnTheBeachJul26.registrationForm.jumpsCount",
+                        )}{" "}
                         <span className="text-primary" aria-hidden="true">
                           *
                         </span>
@@ -554,7 +608,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                         htmlFor="tunnelHours"
                         className="text-sm font-medium"
                       >
-                        {t("event.pancakesOnTheBeachJul26.registrationForm.tunnelHours")}{" "}
+                        {t(
+                          "event.pancakesOnTheBeachJul26.registrationForm.tunnelHours",
+                        )}{" "}
                         <span className="text-primary" aria-hidden="true">
                           *
                         </span>
@@ -607,7 +663,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                       htmlFor="biggestFormationHeadFirst"
                       className="text-sm font-medium"
                     >
-                      {t("event.pancakesOnTheBeachJul26.registrationForm.biggestFormationHeadFirst")}{" "}
+                      {t(
+                        "event.pancakesOnTheBeachJul26.registrationForm.biggestFormationHeadFirst",
+                      )}{" "}
                       <span className="text-primary" aria-hidden="true">
                         *
                       </span>
@@ -655,7 +713,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                       htmlFor="biggestFormationFeetFirst"
                       className="text-sm font-medium"
                     >
-                      {t("event.pancakesOnTheBeachJul26.registrationForm.biggestFormationFeetFirst")}{" "}
+                      {t(
+                        "event.pancakesOnTheBeachJul26.registrationForm.biggestFormationFeetFirst",
+                      )}{" "}
                       <span className="text-primary" aria-hidden="true">
                         *
                       </span>
@@ -693,7 +753,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
               {(field) => (
                 <div className="space-y-2">
                   <Label htmlFor="igProfile" className="text-sm font-medium">
-                    {t("event.pancakesOnTheBeachJul26.registrationForm.igProfile")}
+                    {t(
+                      "event.pancakesOnTheBeachJul26.registrationForm.igProfile",
+                    )}
                   </Label>
                   <Input
                     id="igProfile"
@@ -718,7 +780,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                 return (
                   <div className="space-y-2">
                     <Label htmlFor="tShirtSize" className="text-sm font-medium">
-                      {t("event.pancakesOnTheBeachJul26.registrationForm.tShirtSize")}{" "}
+                      {t(
+                        "event.pancakesOnTheBeachJul26.registrationForm.tShirtSize",
+                      )}{" "}
                       <span className="text-primary" aria-hidden="true">
                         *
                       </span>
@@ -739,7 +803,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                       <SelectContent>
                         {TSHIRT_OPTIONS.map((opt) => (
                           <SelectItem key={opt} value={opt}>
-                            {t(`event.pancakesOnTheBeachJul26.registrationForm.tShirt${opt}`)}
+                            {t(
+                              `event.pancakesOnTheBeachJul26.registrationForm.tShirt${opt}`,
+                            )}
                           </SelectItem>
                         ))}
                       </SelectContent>
@@ -754,7 +820,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
 
             <div className="space-y-3">
               <p className="text-sm font-medium">
-                {t("event.pancakesOnTheBeachJul26.registrationForm.rideQuestion")}
+                {t(
+                  "event.pancakesOnTheBeachJul26.registrationForm.rideQuestion",
+                )}
               </p>
               <div className="flex flex-col gap-2">
                 <form.Field name="rideMilanoToRavenna">
@@ -772,7 +840,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                         htmlFor="rideMilanoToRavenna"
                         className="cursor-pointer text-sm font-normal"
                       >
-                        {t("event.pancakesOnTheBeachJul26.registrationForm.rideMilanoToRavenna")}
+                        {t(
+                          "event.pancakesOnTheBeachJul26.registrationForm.rideMilanoToRavenna",
+                        )}
                       </Label>
                     </div>
                   )}
@@ -792,7 +862,9 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                         htmlFor="rideRavennaToMilano"
                         className="cursor-pointer text-sm font-normal"
                       >
-                        {t("event.pancakesOnTheBeachJul26.registrationForm.rideRavennaToMilano")}
+                        {t(
+                          "event.pancakesOnTheBeachJul26.registrationForm.rideRavennaToMilano",
+                        )}
                       </Label>
                     </div>
                   )}
@@ -808,11 +880,18 @@ export function PancakesOnTheBeachRegistrationForm(props: {
                   <Button
                     type="submit"
                     className="w-full"
-                    disabled={!canSubmit || isSubmitting}
+                    disabled={
+                      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+                      !canSubmit || isSubmitting || submitForm.isPending
+                    }
                   >
-                    {isSubmitting
-                      ? t("event.pancakesOnTheBeachJul26.registrationForm.submitting")
-                      : t("event.pancakesOnTheBeachJul26.registrationForm.submit")}
+                    {isSubmitting || submitForm.isPending
+                      ? t(
+                          "event.pancakesOnTheBeachJul26.registrationForm.submitting",
+                        )
+                      : t(
+                          "event.pancakesOnTheBeachJul26.registrationForm.submit",
+                        )}
                   </Button>
                 )}
               </form.Subscribe>
@@ -820,7 +899,16 @@ export function PancakesOnTheBeachRegistrationForm(props: {
 
             {submitSuccess && (
               <p className="text-primary text-center text-sm font-medium">
-                {t("event.pancakesOnTheBeachJul26.registrationForm.successMessage")}
+                {t(
+                  "event.pancakesOnTheBeachJul26.registrationForm.successMessage",
+                )}
+              </p>
+            )}
+            {submitError && (
+              <p className="text-destructive text-center text-sm font-medium">
+                {t(
+                  "event.pancakesOnTheBeachJul26.registrationForm.errorMessage",
+                )}
               </p>
             )}
           </div>

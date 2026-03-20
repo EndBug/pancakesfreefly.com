@@ -213,6 +213,7 @@
         "submit": "Submit registration",
         "submitting": "Submitting…",
         "successMessage": "Thank you! Your registration has been received.",
+        "errorMessage": "Something went wrong while submitting. Please try again.",
         "validation": {
           "required": "This field is required",
           "invalidEmail": "Please enter a valid email address",

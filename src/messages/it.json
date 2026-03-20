@@ -213,6 +213,7 @@
         "submit": "Invia iscrizione",
         "submitting": "Invio in corso…",
         "successMessage": "Grazie! La tua iscrizione è stata ricevuta.",
+        "errorMessage": "Si e verificato un errore durante l'invio. Riprova.",
         "validation": {
           "required": "Questo campo è obbligatorio",
           "invalidEmail": "Inserisci un indirizzo email valido",

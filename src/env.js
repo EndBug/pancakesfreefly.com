@@ -8,6 +8,7 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    PANCAKES_ON_THE_BEACH_REGISTRATION_ENDPOINT: z.string().url(),
   },
 
   /**
@@ -25,6 +26,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    PANCAKES_ON_THE_BEACH_REGISTRATION_ENDPOINT:
+      process.env.PANCAKES_ON_THE_BEACH_REGISTRATION_ENDPOINT,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
