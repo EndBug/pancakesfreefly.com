@@ -1,0 +1,258 @@
+{
+  "home": {
+    "teamName": "PanCakes Freefly",
+    "sections": {
+      "events": "EVENTI",
+      "team": "SQUADRA"
+    },
+    "events": {
+      "poster": "POSTER {event}",
+      "seeAll": "VEDI TUTTI GLI EVENTI",
+      "registrationsOpen": "ISCRIZIONI APERTE",
+      "registrationsClosed": "ISCRIZIONI CHIUSE",
+      "noUpcoming": "Nessun evento in programma al momento.",
+      "type": {
+        "tunnel": "TUNNEL",
+        "skydiving": "SKYDIVING"
+      }
+    },
+    "team": {
+      "members": [
+        {
+          "name": "MEMBRO SQUADRA 1",
+          "bio": "Testo bio segnaposto. Questo sarà sostituito con le informazioni reali del membro del team."
+        },
+        {
+          "name": "MEMBRO SQUADRA 2",
+          "bio": "Testo bio segnaposto. Questo sarà sostituito con le informazioni reali del membro del team."
+        },
+        {
+          "name": "MEMBRO SQUADRA 3",
+          "bio": "Testo bio segnaposto. Questo sarà sostituito con le informazioni reali del membro del team."
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "teamName": "PanCakes Freefly",
+    "home": "HOME",
+    "events": "EVENTI",
+    "contact": "CONTATTI"
+  },
+  "events": {
+    "upcoming": "PROSSIMI EVENTI",
+    "past": "EVENTI PASSATI",
+    "noUpcoming": "Nessun evento in programma al momento.",
+    "noPast": "Nessun evento passato."
+  },
+  "event": {
+    "banner": {
+      "dates": "DATE",
+      "location": "LUOGO",
+      "registrationDeadline": "SCADENZA ISCRIZIONI",
+      "registrationsOpen": "ISCRIZIONI APERTE",
+      "registrationsClosed": "ISCRIZIONI CHIUSE",
+      "contacts": "CONTATTI"
+    },
+    "backToEvents": "TORNA A TUTTI GLI EVENTI",
+    "sundaySharing": {
+      "registrationForm": {
+        "title": "Partecipa al Sunday Sharing",
+        "closed": "Le registrazioni sono ora chiuse. Contattaci per ricevere informazioni su altri eventi."
+      }
+    },
+    "agSkillCampMar26": {
+      "intro": "Ciao ragazzi, finalmente fuori il nostro skill camp di marzo! 🌪️",
+      "promoPrice": "💸 <strong>NUOVO prezzo PROMO</strong>: <strong>750€/h INCLUSO</strong> di coaching e high speed.",
+      "dates": "⏱️ <strong>QUANDO</strong>: <strong>2-6 e 9-13 marzo</strong>",
+      "coachesIntro": "🪶 <strong>3 coach</strong> a rotazione, che potrete contattare direttamente per le prenotazioni:",
+      "coaches": [
+        {
+          "name": "Luca",
+          "instagram": "https://www.instagram.com/lucagiovannini_lg/"
+        },
+        {
+          "name": "Pier",
+          "instagram": "https://www.instagram.com/pier_andrea.ag/"
+        },
+        {
+          "name": "Fede",
+          "instagram": "https://www.instagram.com/federico.grandi_/"
+        }
+      ]
+    },
+    "sundaySharingNov25": {
+      "intro": "Hello flyers!",
+      "firstDate": "Finalmente abbiamo la prima data del Sunday Sharing di questa stagione. 🥞",
+      "winter": "L'inverno è arrivato e la domenica si finisce presto di saltare purtroppo. 🧊❄️🧤",
+      "purpose": "Per questo abbiamo pensato a questo evento dove potete ritrovarvi per volare in gruppo, allenarvi e soprattutto divertirvi in attesa che torni la bella stagione. 🪂",
+      "whenAndWhere": "Quando e dove?",
+      "dateTime": "<strong>30 novembre 2025, ritrovo alle 17:30 in Aero Gravity</strong>",
+      "whatIncludes": "Cosa include il Sunday Sharing?",
+      "mobilitySession": "🧘‍♀️ Una <strong>sessione di mobilità</strong> di 45' minuti tenuta dalla nostra coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimo <strong>30 minuti</strong> di volo in un gruppo da 5+1 adatto al tuo livello",
+      "pizzaBeer": "🍺🍕 <strong>Pizza e birra</strong> alla fine dell'evento",
+      "price": "💸 Il prezzo per l'evento è di 140 euro a persona.",
+      "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
+      "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
+    },
+    "sundaySharingDec25": {
+      "intro": "Hey flyers!",
+      "secondEdition": "Visto il successo della prima edizione, ecco qui la seconda data prima che arrivi il Natale! 🎄🍻",
+      "winter": "L'inverno è arrivato e la domenica si finisce presto di saltare purtroppo. 🧊❄️🧤",
+      "purpose": "Per questo abbiamo pensato a questo evento dove potete ritrovarvi per volare in gruppo, allenarvi e soprattutto divertirvi in attesa che torni la bella stagione. 🪂",
+      "whenAndWhere": "Quando e dove?",
+      "dateTime": "<strong>14 dicembre 2025, ritrovo alle 17:30 in Aero Gravity</strong>",
+      "whatIncludes": "Cosa include il Sunday Sharing?",
+      "mobilitySession": "🧘‍♀️ Una <strong>sessione di mobilità</strong> di 45' minuti tenuta dalla nostra coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimo <strong>30 minuti</strong> di volo in un gruppo da 4+1 adatto al tuo livello",
+      "pizzaBeer": "🍺🍕 <strong>Pizza e birra</strong> alla fine dell'evento",
+      "price": "💸 Il prezzo per l'evento è di 140 euro a persona.",
+      "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
+      "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
+    },
+    "sundaySharingJan26": {
+      "intro": "Hey flyers!",
+      "newDate": "Ecco una nuova data per iniziare l'anno nel migliore dei modi! 🍻",
+      "winter": "L'inverno è arrivato e la domenica si finisce presto di saltare purtroppo. 🧊❄️🧤",
+      "purpose": "Per questo abbiamo pensato a questo evento dove potete ritrovarvi per volare in gruppo, allenarvi e soprattutto divertirvi in attesa che torni la bella stagione. 🪂",
+      "whenAndWhere": "Quando e dove?",
+      "dateTime": "<strong>25 gennaio 2026, ritrovo alle 17:30 in Aero Gravity</strong>",
+      "whatIncludes": "Cosa include il Sunday Sharing?",
+      "mobilitySession": "🧘‍♀️ Una <strong>sessione di mobilità</strong> di 45' minuti tenuta dalla nostra coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimo <strong>30 minuti</strong> di volo in un gruppo da 4+1 adatto al tuo livello",
+      "pizzaBeer": "🍺🍕 <strong>Pizza e birra</strong> alla fine dell'evento",
+      "price": "💸 Il prezzo per l'evento è di 140 euro a persona.",
+      "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
+      "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
+    },
+    "sundaySharingFeb26": {
+      "intro": "Hey flyers!",
+      "winter": "L'inverno è arrivato e la domenica si finisce presto di saltare purtroppo. 🧊❄️🧤",
+      "purpose": "Per questo abbiamo pensato a questo evento dove potete ritrovarvi per volare in gruppo, allenarvi e soprattutto divertirvi in attesa che torni la bella stagione. 🪂",
+      "whenAndWhere": "Quando e dove?",
+      "dateTime": "<strong>15 febbraio 2026, ritrovo alle 18:30 in Aero Gravity</strong>",
+      "whatIncludes": "Cosa include il Sunday Sharing?",
+      "mobilitySession": "🧘‍♀️ Una <strong>sessione di mobilità</strong> di 45' minuti tenuta dalla nostra coach <link>Chiara Ferrero</link>",
+      "flyingTime": "🦇 Minimo <strong>30 minuti</strong> di volo in un gruppo da 4+1 adatto al tuo livello",
+      "pizzaBeer": "🍺🍕 <strong>Pizza e birra</strong> alla fine dell'evento",
+      "price": "💸 Il prezzo per l'evento è di 140 euro a persona.",
+      "registrationInfo": "Per registrarsi all'evento bisognerà compilare il form qui sotto, con il quale capiremo anche qual è il gruppo più adatto a voi. Una volta compilato vi ricontatteremo noi per confermare la vostra partecipazione.",
+      "contactInfo": "Per qualsiasi altra informazione non esitate a contattarci ai profili indicati sopra."
+    },
+    "pancakesOnTheBeachJul26": {
+      "intro": "Ciao flyers! Vi presentiamo il nostro evento estivo \"PanCakes on the Beach\" in collaborazione con Aero Gravity e Skydive Pull Out Ravenna.",
+      "whereHeading": "Dove?",
+      "whereDay1": "3 luglio 2026 — Aero Gravity, Milano",
+      "whereDays2_4": "4–6 luglio 2026 — Skydive Pull Out, Ravenna",
+      "coachesHeading": "Coaches",
+      "coaches": [
+        {
+          "name": "Dani Gallego",
+          "instagram": "https://www.instagram.com/danigallego/"
+        },
+        {
+          "name": "Luca Giovannini",
+          "instagram": "https://www.instagram.com/lucagiovannini_lg/"
+        },
+        {
+          "name": "Rob Jones",
+          "instagram": "https://www.instagram.com/robjones/"
+        },
+        {
+          "name": "Lamberto Micangeli",
+          "instagram": "https://www.instagram.com/lamberromicangeli/"
+        }
+      ],
+      "groupsAndJumps": "Gruppi da 6+1. 6 salti al giorno garantiti.",
+      "priceHeading": "Prezzo iscrizione",
+      "priceAmount": "429€ — cosa include?",
+      "priceJam": "90 minuti di jam session in Aero Gravity",
+      "priceJumps": "3 giorni di salti con i coaches",
+      "priceGoodie": "Sacca con gadgets dagli sponsor dell'evento (Aero Gravity Milano e Skydive Pull Out Ravenna)",
+      "ticketPrice": "Prezzo ticket: 39€ con Cessna Caravan 208 a 4500 m",
+      "scheduleHeading": "Come funzionerà l'evento?",
+      "scheduleFriday": "Venerdì 3 luglio 2026 — Aero Gravity Milano. Ore 10:30 inizio jam, 90 minuti totali.",
+      "scheduleSaturday": "Sabato 4 luglio 2026 — Ritrovo alle 08:00 presso Skydive Pull Out Ravenna",
+      "scheduleSunday": "Domenica 5 luglio 2026 — Ritrovo alle 08:00 presso Skydive Pull Out Ravenna",
+      "scheduleMonday": "Lunedì 6 luglio 2026 — Ritrovo alle 08:00 presso Skydive Pull Out Ravenna",
+      "videoHeading": "Edizione precedente",
+      "registrationForm": {
+        "title": "Iscrizione",
+        "requirementsQuestion": "Possiedi i seguenti requisiti minimi per la registrazione?",
+        "requirementsBullet1": "350 salti o una raccomandazione da parte di uno dei coach.",
+        "requirementsBullet2": "Outdoor:",
+        "requirementsBullet2Sub1": "Saper volare in deriva di pancia e di schiena all'interno del quadrante assegnato, in sicurezza, in un gruppo di 6 persone (essere in grado di mantenere il lato della formazione assegnato, senza attraversare il centro della formazione).",
+        "requirementsBullet2Sub2": "Saper uscire dall'aereo in deriva di pancia e di schiena e approcciare la formazione in sicurezza.",
+        "requirementsBullet2Sub3": "Saper separare dal gruppo in sicurezza mantenendo il volo in deriva.",
+        "requirementsBullet3": "Indoor:",
+        "requirementsBullet3Sub1": "Saper volare statici seduti e a testa in giù.",
+        "requirementsBullet3Sub2": "Saper fare una presa da seduti e a testa in giù.",
+        "requirementsBullet3Sub3": "Saper fare il cambio da seduti a testa in giù mantenendo il proprio slot.",
+        "requirementsBullet4": "Essere in grado di volare statici a testa in giù e a testa in su. Essere in grado di volare sui piedi e sulla testa e saper eseguire il cambio nella propria slot. Saper fare una presa sui piedi e sulla testa.",
+        "requirementsCheckboxLabel": "Possiedo i requisiti sopra indicati",
+        "firstName": "Nome",
+        "lastName": "Cognome",
+        "phone": "Numero di telefono (WhatsApp)",
+        "email": "Indirizzo email",
+        "jumpsCount": "Numero di salti a oggi",
+        "tunnelHours": "Ore di tunnel",
+        "biggestFormationHeadFirst": "Qual è la formazione più grande che hai volato a testa in giù?",
+        "biggestFormationFeetFirst": "Qual è la formazione più grande che hai volato sui piedi?",
+        "igProfile": "Profilo IG",
+        "tShirtSize": "Taglia maglietta",
+        "tShirtXS": "XS",
+        "tShirtS": "S",
+        "tShirtM": "M",
+        "tShirtL": "L",
+        "tShirtXL": "XL",
+        "tShirtXXL": "XXL",
+        "rideQuestion": "Potresti aver bisogno di un passaggio?",
+        "rideMilanoToRavenna": "Da Milano a Ravenna",
+        "rideRavennaToMilano": "Da Ravenna a Milano",
+        "submit": "Invia iscrizione",
+        "submitting": "Invio in corso…",
+        "successMessage": "Grazie! La tua iscrizione è stata ricevuta.",
+        "validation": {
+          "required": "Questo campo è obbligatorio",
+          "invalidEmail": "Inserisci un indirizzo email valido",
+          "invalidPhone": "Inserisci un numero di telefono valido",
+          "minValue": "Deve essere 0 o maggiore"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "CONTATTACI",
+    "primary": {
+      "heading": "SCRIVICI",
+      "description": "Il modo migliore per raggiungerci è tramite DM su Instagram o email.",
+      "instagram": "SCRIVICI SU INSTAGRAM",
+      "email": "MANDACI UNA EMAIL"
+    },
+    "team": {
+      "heading": "CONTATTA UNO DI NOI",
+      "members": [
+        {
+          "name": "Chiara",
+          "instagram": "https://instagram.com/ferrero_chiara",
+          "handle": "@ferrero_chiara"
+        },
+        {
+          "name": "Fede",
+          "instagram": "https://instagram.com/federico.grandi_",
+          "handle": "@federico.grandi_"
+        },
+        {
+          "name": "Pier",
+          "instagram": "https://instagram.com/pier_andrea.ag",
+          "handle": "@pier_andrea.ag"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "title": "PanCakes Freefly",
+    "description": "Eventi di tunnel e skydiving in Italia e Europa"
+  }
+}

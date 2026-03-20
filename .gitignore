@@ -44,3 +44,6 @@ yarn-error.log*
 
 # idea files
 .idea
+
+# generated (hero title paths from scripts/generate-hero-svg.mjs)
+src/_generated
