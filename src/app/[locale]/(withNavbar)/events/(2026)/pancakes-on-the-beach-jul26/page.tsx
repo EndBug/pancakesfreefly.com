@@ -1,6 +1,7 @@
 import { type Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { EventLayout } from "~/components/event-layout";
+import { PancakesOnTheBeachRegistrationForm } from "~/components/pancakes-on-the-beach-registration-form";
 import { YoutubeEmbed } from "~/components/youtube-embed";
 import { getEventById } from "~/lib/events";
 
@@ -42,9 +43,12 @@ export default async function PancakesOnTheBeachJul26Page({
 
   const t = await getTranslations({ locale });
 
-  const coaches = t.raw(
-    "event.pancakesOnTheBeachJul26.coaches",
-  ) as Array<{ name: string; instagram: string }>;
+  const event = getEventById(EVENT_ID);
+
+  const coaches = t.raw("event.pancakesOnTheBeachJul26.coaches") as Array<{
+    name: string;
+    instagram: string;
+  }>;
 
   return (
     <EventLayout eventId={EVENT_ID}>
@@ -58,11 +62,7 @@ export default async function PancakesOnTheBeachJul26Page({
       <ul>
         {coaches.map((coach) => (
           <li key={coach.name}>
-            <a
-              href={coach.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={coach.instagram} target="_blank" rel="noopener noreferrer">
               {coach.name}
             </a>
           </li>
@@ -94,6 +94,12 @@ export default async function PancakesOnTheBeachJul26Page({
         title={t("event.pancakesOnTheBeachJul26.videoHeading")}
         className="mt-4"
       />
+
+      {event?.registrationDeadline && (
+        <PancakesOnTheBeachRegistrationForm
+          registrationDeadline={event.registrationDeadline}
+        />
+      )}
     </EventLayout>
   );
 }

@@ -147,10 +147,22 @@
       "whereDays2_4": "July 4–6, 2026 — Skydive Pull Out, Ravenna",
       "coachesHeading": "Coaches",
       "coaches": [
-        { "name": "Dani Gallego", "instagram": "https://www.instagram.com/danigallego/" },
-        { "name": "Luca Giovannini", "instagram": "https://www.instagram.com/lucagiovannini_lg/" },
-        { "name": "Rob Jones", "instagram": "https://www.instagram.com/robjones/" },
-        { "name": "Lamberto Micangeli", "instagram": "https://www.instagram.com/lamberromicangeli/" }
+        {
+          "name": "Dani Gallego",
+          "instagram": "https://www.instagram.com/danigallego/"
+        },
+        {
+          "name": "Luca Giovannini",
+          "instagram": "https://www.instagram.com/lucagiovannini_lg/"
+        },
+        {
+          "name": "Rob Jones",
+          "instagram": "https://www.instagram.com/robjones/"
+        },
+        {
+          "name": "Lamberto Micangeli",
+          "instagram": "https://www.instagram.com/lamberromicangeli/"
+        }
       ],
       "groupsAndJumps": "6+1 groups. 6 jumps per day guaranteed.",
       "priceHeading": "Registration price",
@@ -164,7 +176,50 @@
       "scheduleSaturday": "Saturday July 4, 2026 — Meet at 08:00 at Skydive Pull Out Ravenna",
       "scheduleSunday": "Sunday July 5, 2026 — Meet at 08:00 at Skydive Pull Out Ravenna",
       "scheduleMonday": "Monday July 6, 2026 — Meet at 08:00 at Skydive Pull Out Ravenna",
-      "videoHeading": "Last edition"
+      "videoHeading": "Last edition",
+      "registrationForm": {
+        "title": "Registration",
+        "requirementsQuestion": "Do you meet the following minimum requirements for registration?",
+        "requirementsBullet1": "350 jumps or a recommendation from one of the coaches.",
+        "requirementsBullet2": "Outdoor:",
+        "requirementsBullet2Sub1": "Able to fly belly and back track within the assigned quadrant, safely, in a group of 6 people (be able to maintain the assigned side of the formation, without crossing the center of the formation).",
+        "requirementsBullet2Sub2": "Able to exit the airplane belly and back track and approach the formation safely.",
+        "requirementsBullet2Sub3": "Able to separate from the group safely while maintaining track flight.",
+        "requirementsBullet3": "Indoor:",
+        "requirementsBullet3Sub1": "Able to fly static seat and head-down.",
+        "requirementsBullet3Sub2": "Able to perform seat and head-down grips.",
+        "requirementsBullet3Sub3": "Able to perform a seat to head-down change while maintaining your slot.",
+        "requirementsBullet4": "Able to fly static head down and head up. Able to fly on your feet and on your head and perform the change in your slot. Able to perform a grip on your feet and on your head.",
+        "requirementsCheckboxLabel": "I meet the above requirements",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "phone": "Phone number (WhatsApp)",
+        "email": "Email address",
+        "jumpsCount": "Number of jumps to date",
+        "tunnelHours": "Number of tunnel hours",
+        "biggestFormationHeadFirst": "What is the biggest formation you have flown head first?",
+        "biggestFormationFeetFirst": "What is the biggest formation you have flown feet first?",
+        "igProfile": "IG profile",
+        "tShirtSize": "T-shirt size",
+        "tShirtXS": "XS",
+        "tShirtS": "S",
+        "tShirtM": "M",
+        "tShirtL": "L",
+        "tShirtXL": "XL",
+        "tShirtXXL": "XXL",
+        "rideQuestion": "Could you need a ride?",
+        "rideMilanoToRavenna": "From Milano to Ravenna",
+        "rideRavennaToMilano": "From Ravenna to Milano",
+        "submit": "Submit registration",
+        "submitting": "Submitting…",
+        "successMessage": "Thank you! Your registration has been received.",
+        "validation": {
+          "required": "This field is required",
+          "invalidEmail": "Please enter a valid email address",
+          "invalidPhone": "Please enter a valid phone number",
+          "minValue": "Must be 0 or greater"
+        }
+      }
     }
   },
   "contact": {
