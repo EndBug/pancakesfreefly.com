@@ -8,7 +8,7 @@ import { getEventById } from "~/lib/events";
 export const dynamic = "force-static";
 
 const EVENT_ID = "pancakes-on-the-beach-jul26";
-const YOUTUBE_VIDEO_ID = "Znyzz1YoeZw";
+const YOUTUBE_VIDEO_ID = "MqPsE6aRCDg";
 
 export async function generateMetadata({
   params,
