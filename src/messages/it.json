@@ -234,6 +234,10 @@
           "minValue": "Deve essere 0 o maggiore"
         }
       }
+    },
+    "pancakesInvitational2025": {
+      "intro": "Un format PanCakes Invitational di tre giorni, dal tunnel allo skydiving, con Aero Gravity e FlyGang Molinella.",
+      "videoHeading": "Video dell'evento"
     }
   },
   "contact": {

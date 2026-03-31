@@ -64,6 +64,17 @@ export const rawEventsData = [
     ],
   },
   {
+    id: "pancakes-invitational-2025",
+    title: "PanCakes Invitational 2025",
+    type: ["skydiving"],
+    date: "2025-07-18",
+    endDate: "2025-07-20",
+    location: "Aero Gravity → FlyGang Molinella",
+    registrationDeadline: "2025-07-01T23:59:59+02:00",
+    imageUrl: "/images/events/pancakes-invitational-2025.png",
+    contacts: [{ type: ContactType.Instagram, value: "@pier_andrea.ag" }],
+  },
+  {
     id: "ag-skill-camp-oct25",
     title: "Human Flight x PanCakes Freefly | Skill Camp",
     type: ["tunnel"],
