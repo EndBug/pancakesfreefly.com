@@ -145,6 +145,19 @@
       "whereHeading": "Where?",
       "whereDay1": "July 3, 2026 — Aero Gravity, Milano",
       "whereDays2_4": "July 4–6, 2026 — Skydive Pull Out, Ravenna",
+      "sponsorsHeading": "Event sponsors",
+      "sponsors": [
+        {
+          "name": "Aero Gravity",
+          "logo": "/images/partner-logos/aero-gravity.png",
+          "url": "https://aerogravity.it"
+        },
+        {
+          "name": "Skydive Pull Out Ravenna",
+          "logo": "/images/partner-logos/skydive-pull-out-ravenna.png",
+          "url": "https://www.instagram.com/skydive_pull_out_ravenna/"
+        }
+      ],
       "coachesHeading": "Coaches",
       "coaches": [
         {

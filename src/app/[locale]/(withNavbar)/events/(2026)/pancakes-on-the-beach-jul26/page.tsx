@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { EventLayout } from "~/components/event-layout";
 import { PancakesOnTheBeachRegistrationForm } from "~/components/pancakes-on-the-beach-registration-form";
@@ -49,6 +50,11 @@ export default async function PancakesOnTheBeachJul26Page({
     name: string;
     instagram: string;
   }>;
+  const sponsors = t.raw("event.pancakesOnTheBeachJul26.sponsors") as Array<{
+    name: string;
+    logo: string;
+    url: string;
+  }>;
 
   return (
     <EventLayout eventId={EVENT_ID}>
@@ -57,6 +63,34 @@ export default async function PancakesOnTheBeachJul26Page({
       <h2>{t("event.pancakesOnTheBeachJul26.whereHeading")}</h2>
       <p>{t("event.pancakesOnTheBeachJul26.whereDay1")}</p>
       <p>{t("event.pancakesOnTheBeachJul26.whereDays2_4")}</p>
+
+      <h2>{t("event.pancakesOnTheBeachJul26.sponsorsHeading")}</h2>
+      <div className="not-prose mt-4">
+        <div className="flex gap-4 overflow-x-auto pb-2">
+          {sponsors.map((sponsor) => (
+            <a
+              key={sponsor.name}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-border bg-background focus-visible:ring-primary flex w-72 min-w-72 shrink-0 flex-col gap-4 border-2 px-8 py-5 transition-colors hover:border-white/50 focus-visible:ring-2 focus-visible:outline-none"
+            >
+              <div className="bg-page-background flex h-32 items-center justify-center px-6 py-4">
+                <Image
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  width={260}
+                  height={120}
+                  className="max-h-full w-full object-contain"
+                />
+              </div>
+              <p className="text-foreground text-sm font-semibold tracking-wide uppercase">
+                {sponsor.name}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
 
       <h2>{t("event.pancakesOnTheBeachJul26.coachesHeading")}</h2>
       <ul>
