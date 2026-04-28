@@ -174,18 +174,6 @@ export const rawEventsData = [
       { type: ContactType.Instagram, value: "@federico.grandi_" },
     ],
   },
-  {
-    id: "pancakes-on-the-beach-jul26",
-    title: "PanCakes on the Beach",
-    type: ["skydiving"],
-    date: "2026-07-03",
-    endDate: "2026-07-06",
-    location: "Aero Gravity, Milano, IT → Skydive Pull Out, Ravenna, IT",
-    registrationDeadline: "2026-06-01T23:59:59+02:00",
-    imageUrl: "/images/events/pancakes-on-the-beach-jul26.png",
-    showDeadline: true,
-    contacts: [{ type: ContactType.Instagram, value: "@pier_andrea.ag" }],
-  },
 ] as const satisfies Event[];
 
 export const eventsData = rawEventsData as Event[];
