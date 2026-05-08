@@ -32,7 +32,7 @@
     "lucide-react": "^0.562.0",
     "luxon": "^3.7.2",
     "next": "^16.1.5",
-    "next-intl": "^4.7.0",
+    "next-intl": "^4.9.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "server-only": "^0.0.1",
