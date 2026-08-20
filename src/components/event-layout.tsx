@@ -24,13 +24,13 @@ export async function EventLayout({ eventId, children }: EventLayoutProps) {
       <div className="container mx-auto px-4 pt-16 pb-8 md:pt-8">
         {/* Breadcrumb */}
         <nav className="text-muted-foreground mb-6 flex items-center gap-2 text-sm">
-          <Link href="/" className="hover:text-foreground transition-colors">
+          <Link href="/" className="hover:text-foreground cursor-pointer transition-colors">
             {t("navbar.home")}
           </Link>
           <ChevronRight className="h-4 w-4" />
           <Link
             href="/events"
-            className="hover:text-foreground transition-colors"
+            className="hover:text-foreground cursor-pointer transition-colors"
           >
             {t("navbar.events")}
           </Link>
@@ -42,7 +42,7 @@ export async function EventLayout({ eventId, children }: EventLayoutProps) {
         <EventBanner event={event} />
 
         {/* Page Content */}
-        <div className="prose prose-invert prose-h1:underline prose-h1:decoration-primary prose-h1:underline-offset-4 prose-h2:underline prose-h2:decoration-primary prose-h2:underline-offset-4 prose-h3:underline prose-h3:decoration-primary prose-h3:underline-offset-4 prose-a:hover:text-primary prose-a:transition-colors mt-8 max-w-none">
+        <div className="prose prose-invert prose-h1:underline prose-h1:decoration-primary prose-h1:underline-offset-4 prose-h2:underline prose-h2:decoration-primary prose-h2:underline-offset-4 prose-h3:underline prose-h3:decoration-primary prose-h3:underline-offset-4 prose-a:cursor-pointer prose-a:hover:text-primary prose-a:transition-colors mt-8 max-w-none">
           {children}
         </div>
 
@@ -50,7 +50,7 @@ export async function EventLayout({ eventId, children }: EventLayoutProps) {
         <div className="border-border mt-12 border-t-2 pt-8">
           <Link
             href="/events"
-            className="text-muted-foreground hover:text-foreground inline-flex items-center gap-2 text-sm font-medium tracking-wider uppercase transition-colors"
+            className="text-muted-foreground hover:text-foreground inline-flex cursor-pointer items-center gap-2 text-sm font-medium tracking-wider uppercase transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             {t("event.backToEvents")}

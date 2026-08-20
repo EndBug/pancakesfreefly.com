@@ -38,7 +38,7 @@ export default async function ContactPage({
               href="https://instagram.com/pancakes_freefly"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-3 border-2 px-6 py-4 text-sm font-bold tracking-wider uppercase transition-colors"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex cursor-pointer items-center gap-3 border-2 px-6 py-4 text-sm font-bold tracking-wider uppercase transition-colors"
             >
               <Image
                 src="/images/brand-icons/instagram.svg"
@@ -52,7 +52,7 @@ export default async function ContactPage({
 
             <a
               href="mailto:team@pancakesfreefly.com"
-              className="border-foreground/30 text-foreground hover:border-foreground inline-flex items-center gap-3 border-2 px-6 py-4 text-sm font-bold tracking-wider uppercase transition-colors"
+              className="border-foreground/30 text-foreground hover:border-foreground inline-flex cursor-pointer items-center gap-3 border-2 px-6 py-4 text-sm font-bold tracking-wider uppercase transition-colors"
             >
               <Mail className="h-5 w-5" />
               {t("contact.primary.email")}
@@ -75,7 +75,7 @@ export default async function ContactPage({
                 href={member.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-border group border-2 p-6 transition-colors hover:border-primary"
+                className="border-border group cursor-pointer border-2 p-6 transition-colors hover:border-primary"
               >
                 <h3 className="text-foreground mb-2 text-2xl font-bold uppercase">
                   {member.name}

@@ -23,7 +23,7 @@ export function MobileNav() {
       {/* Hamburger Button - Mobile Only */}
       <button
         onClick={toggleMenu}
-        className="border-border bg-page-background text-foreground hover:border-primary hover:text-primary fixed top-4 right-4 z-100 flex h-10 w-10 items-center justify-center border-2 transition-colors md:hidden"
+          className="border-border bg-page-background text-foreground hover:border-primary hover:text-primary fixed top-4 right-4 z-100 flex h-10 w-10 cursor-pointer items-center justify-center border-2 transition-colors md:hidden"
         aria-label="Toggle menu"
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -47,7 +47,7 @@ export function MobileNav() {
         <Link
           href="/"
           onClick={closeMenu}
-          className="flex flex-col items-center"
+          className="flex cursor-pointer flex-col items-center"
         >
           <Image
             src="/logo.svg"
@@ -72,21 +72,21 @@ export function MobileNav() {
           <Link
             href="/"
             onClick={closeMenu}
-            className="text-foreground hover:text-primary text-lg font-medium tracking-wide uppercase transition-colors"
+            className="text-foreground hover:text-primary cursor-pointer text-lg font-medium tracking-wide uppercase transition-colors"
           >
             {t("navbar.home")}
           </Link>
           <Link
             href="/events"
             onClick={closeMenu}
-            className="text-foreground hover:text-primary text-lg font-medium tracking-wide uppercase transition-colors"
+            className="text-foreground hover:text-primary cursor-pointer text-lg font-medium tracking-wide uppercase transition-colors"
           >
             {t("navbar.events")}
           </Link>
           <Link
             href="/contact"
             onClick={closeMenu}
-            className="text-foreground hover:text-primary text-lg font-medium tracking-wide uppercase transition-colors"
+            className="text-foreground hover:text-primary cursor-pointer text-lg font-medium tracking-wide uppercase transition-colors"
           >
             {t("navbar.contact")}
           </Link>
@@ -101,7 +101,7 @@ export function MobileNav() {
                     href={pathname}
                     locale={locale}
                     onClick={closeMenu}
-                    className={`transition-colors ${
+                    className={`cursor-pointer transition-colors ${
                       isActive
                         ? "text-foreground"
                         : "text-foreground/50 hover:text-foreground"

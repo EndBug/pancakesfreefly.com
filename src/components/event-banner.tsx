@@ -201,7 +201,7 @@ export function EventBanner({ event }: EventBannerProps) {
                     href={getContactUrl(contact.type, contact.value)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground flex items-center gap-2"
+                    className="text-foreground hover:text-primary flex cursor-pointer items-center gap-2 transition-colors"
                   >
                     <span className="shrink-0">
                       {getContactIcon(contact.type)}

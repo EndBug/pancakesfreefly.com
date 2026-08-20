@@ -174,6 +174,20 @@ export const rawEventsData = [
       { type: ContactType.Instagram, value: "@federico.grandi_" },
     ],
   },
+  {
+    id: "flyspot-gdansk-nov26",
+    title: "Skill Camp",
+    type: ["tunnel"],
+    date: "2026-11-03",
+    endDate: "2026-11-07",
+    location: "Flyspot Gdańsk | PL",
+    registrationDeadline: "2026-11-02T23:59:59+01:00",
+    imageUrl: "/images/events/fooni-feb24.png",
+    contacts: [
+      { type: ContactType.Instagram, value: "@pier_andrea.ag" },
+      { type: ContactType.Instagram, value: "@federico.grandi_" },
+    ],
+  },
 ] as const satisfies Event[];
 
 export const eventsData = rawEventsData as Event[];

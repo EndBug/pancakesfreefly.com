@@ -38,7 +38,7 @@ export function EventCard({ event }: EventCardProps) {
     : formatDate(startDate);
 
   return (
-    <Link href={`/events/${event.id}`} className="group relative block">
+    <Link href={`/events/${event.id}`} className="group relative block cursor-pointer">
       <Card className="border-border bg-card mx-auto flex max-w-md flex-col overflow-hidden rounded-none border-2 py-0 transition-all sm:mx-0 sm:max-w-none sm:flex-row">
         {/* Animated border - using separate divs for each side to avoid stretching */}
         <div className="pointer-events-none absolute inset-0 z-10">

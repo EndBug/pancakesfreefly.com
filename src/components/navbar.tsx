@@ -50,7 +50,7 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo & Name */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex cursor-pointer items-center gap-3">
           <div className="h-10 w-10 overflow-clip">
             <Image
               src="/logo.svg"
@@ -69,19 +69,19 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
         <div className="flex items-center gap-8">
           <Link
             href="/"
-            className="text-foreground hover:text-primary text-sm font-medium tracking-wide uppercase transition-colors"
+            className="text-foreground hover:text-primary cursor-pointer text-sm font-medium tracking-wide uppercase transition-colors"
           >
             {t("navbar.home")}
           </Link>
           <Link
             href="/events"
-            className="text-foreground hover:text-primary text-sm font-medium tracking-wide uppercase transition-colors"
+            className="text-foreground hover:text-primary cursor-pointer text-sm font-medium tracking-wide uppercase transition-colors"
           >
             {t("navbar.events")}
           </Link>
           <Link
             href="/contact"
-            className="text-foreground hover:text-primary text-sm font-medium tracking-wide uppercase transition-colors"
+            className="text-foreground hover:text-primary cursor-pointer text-sm font-medium tracking-wide uppercase transition-colors"
           >
             {t("navbar.contact")}
           </Link>
@@ -95,7 +95,7 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
                   <Link
                     href={pathname}
                     locale={locale}
-                    className={`transition-colors ${
+                    className={`cursor-pointer transition-colors ${
                       isActive
                         ? "text-foreground"
                         : "text-foreground/50 hover:text-foreground"

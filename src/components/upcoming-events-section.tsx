@@ -52,7 +52,7 @@ export function UpcomingEventsSection({
 
         {allEvents.length > upcomingEvents.length && (
           <div className="mt-12 flex justify-center">
-            <Link href="/events">
+            <Link href="/events" className="cursor-pointer">
               <Button
                 variant="outline"
                 className="cursor-pointer rounded-none"

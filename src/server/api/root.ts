@@ -1,5 +1,6 @@
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 import { emptyRouter } from "./routers/empty";
+import { flyspotGdanskNov26Router } from "./routers/flyspotGdanskNov26";
 import { pancakesOnTheBeachRouter } from "./routers/pancakesOnTheBeach";
 
 /**
@@ -9,6 +10,7 @@ import { pancakesOnTheBeachRouter } from "./routers/pancakesOnTheBeach";
  */
 export const appRouter = createTRPCRouter({
   empty: emptyRouter,
+  flyspotGdanskNov26: flyspotGdanskNov26Router,
   pancakesOnTheBeach: pancakesOnTheBeachRouter,
 });
 
