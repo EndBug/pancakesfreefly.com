@@ -45,7 +45,7 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
         isVisible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none -translate-y-full opacity-0",
-        enableScrollBehavior ? "fixed top-0 right-0 left-0" : "block w-full",
+        enableScrollBehavior ? "fixed top-0 right-0 left-0" : "w-full",
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
@@ -60,7 +60,7 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
               className="h-10 w-10 scale-120"
             />
           </div>
-          <span className="font-display text-primary tracking- translate-y-1 hidden self-center text-5xl sm:inline">
+          <span className="font-display text-primary tracking- translate-y-1 self-center text-5xl">
             {t("navbar.teamName")}
           </span>
         </Link>

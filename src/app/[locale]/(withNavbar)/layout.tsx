@@ -1,5 +1,4 @@
 import { setRequestLocale } from "next-intl/server";
-import { MobileNav } from "~/components/mobile-nav";
 import { Navbar } from "~/components/navbar";
 
 export default async function WithNavbarLayout({
@@ -14,7 +13,6 @@ export default async function WithNavbarLayout({
 
   return (
     <>
-      <MobileNav />
       <Navbar />
       {children}
     </>
