@@ -904,7 +904,7 @@ function getEmailBody(language, info) {
             <tr>
               <td align="center">
               <img
-                src="https://www.pancakesfreefly.com/images/events/fooni-feb24.png"
+                src="https://www.pancakesfreefly.com/images/events/flyspot-gdansk-nov26.png"
                 width="600"
                 style="display:block; max-width:600px; width:100%;"
                 alt="${escapeHtml(EVENT_NAME[language])}"
@@ -959,7 +959,7 @@ function doPost(e) {
     if (!e) throw new Error("No event provided: " + e);
 
     const ss = SpreadsheetApp.getActiveSpreadsheet();
-    const sheet = ss.getSheetByName("Iscrizioni");
+    const sheet = ss.getSheetByName("Registrations");
     if (!sheet) throw new Error("Sheet not found");
 
     const {
@@ -1001,24 +1001,28 @@ function doPost(e) {
       const usedRows = sheet
         .getRange("A3:A")
         .getValues()
-        .filter((row) => typeof row[0] === "string" && row[0].length > 0).length;
+        .filter(
+          (row) => typeof row[0] === "string" && row[0].length > 0,
+        ).length;
       const targetRow = usedRows + 3;
 
-      sheet.getRange(`A${targetRow}:K${targetRow}`).setValues([
-        [
-          firstName,
-          lastName,
-          phone,
-          email,
-          Number(flyingMinutes) || 0,
-          availableFrom,
-          availableTo,
-          wantsToShare ? "Sì" : "No",
-          wantsToShare ? companionName || "" : "",
-          creditHandling,
-          language === "en" ? "en" : "it",
-        ],
-      ]);
+      sheet
+        .getRange(`A${targetRow}:K${targetRow}`)
+        .setValues([
+          [
+            firstName,
+            lastName,
+            phone,
+            email,
+            Number(flyingMinutes) || 0,
+            availableFrom,
+            availableTo,
+            wantsToShare ? "Sì" : "No",
+            wantsToShare ? companionName || "" : "",
+            creditHandling,
+            language === "en" ? "en" : "it",
+          ],
+        ]);
     } finally {
       lock.releaseLock();
     }

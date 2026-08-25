@@ -40,7 +40,11 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 import { Checkbox } from "~/components/ui/checkbox";
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
+import {
+  RadioGroup,
+  RadioGroupItem,
+  RadioOption,
+} from "~/components/ui/radio-group";
 import { Switch } from "~/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import {
@@ -297,24 +301,18 @@ export default function UISamplePage() {
                   }
                 }}
               >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="option-one" id="option-one" />
-                  <Label htmlFor="option-one" className="cursor-pointer">
-                    Option One
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="option-two" id="option-two" />
-                  <Label htmlFor="option-two" className="cursor-pointer">
-                    Option Two
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="option-three" id="option-three" />
-                  <Label htmlFor="option-three" className="cursor-pointer">
-                    Option Three
-                  </Label>
-                </div>
+                <RadioOption>
+                  <RadioGroupItem value="option-one" />
+                  <span>Option One</span>
+                </RadioOption>
+                <RadioOption>
+                  <RadioGroupItem value="option-two" />
+                  <span>Option Two</span>
+                </RadioOption>
+                <RadioOption>
+                  <RadioGroupItem value="option-three" />
+                  <span>Option Three</span>
+                </RadioOption>
               </RadioGroup>
             </div>
             <div className="space-y-2">

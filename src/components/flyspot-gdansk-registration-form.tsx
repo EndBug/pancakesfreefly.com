@@ -9,12 +9,16 @@ import { z } from "zod";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
+import {
+  RadioGroup,
+  RadioGroupItem,
+  RadioOption,
+} from "~/components/ui/radio-group";
 import { api } from "~/trpc/react";
 
 const CAMP_START = "2026-11-03";
 const CAMP_END = "2026-11-07";
-const MIN_FLYING_MINUTES = 30;
+const MIN_FLYING_MINUTES = 60;
 const MAX_FLYING_MINUTES = 20 * 60;
 const DEFAULT_FLYING_MINUTES = 60;
 
@@ -639,24 +643,18 @@ export function FlyspotGdanskRegistrationForm(props: {
                   className="flex flex-col gap-3"
                   aria-invalid={isInvalid}
                 >
-                  <div className="hover:bg-muted/30 -mx-2 flex cursor-pointer items-center space-x-2 px-2 py-2 transition-colors">
-                    <RadioGroupItem value="true" id="sharing-yes" />
-                    <Label
-                      htmlFor="sharing-yes"
-                      className="cursor-pointer text-sm font-normal"
-                    >
+                  <RadioOption>
+                    <RadioGroupItem value="true" />
+                    <span className="text-sm font-normal">
                       {t("event.flyspotGdanskNov26.registrationForm.sharingYes")}
-                    </Label>
-                  </div>
-                  <div className="hover:bg-muted/30 -mx-2 flex cursor-pointer items-center space-x-2 px-2 py-2 transition-colors">
-                    <RadioGroupItem value="false" id="sharing-no" />
-                    <Label
-                      htmlFor="sharing-no"
-                      className="cursor-pointer text-sm font-normal"
-                    >
+                    </span>
+                  </RadioOption>
+                  <RadioOption>
+                    <RadioGroupItem value="false" />
+                    <span className="text-sm font-normal">
                       {t("event.flyspotGdanskNov26.registrationForm.sharingNo")}
-                    </Label>
-                  </div>
+                    </span>
+                  </RadioOption>
                 </RadioGroup>
                 {errorMessage && (
                   <p className="text-destructive text-sm">{errorMessage}</p>
@@ -730,51 +728,36 @@ export function FlyspotGdanskRegistrationForm(props: {
                   className="flex flex-col gap-3"
                   aria-invalid={isInvalid}
                 >
-                  <div className="hover:bg-muted/30 -mx-2 flex cursor-pointer items-start space-x-2 px-2 py-2 transition-colors">
+                  <RadioOption className="items-start">
                     <RadioGroupItem
                       value="self_purchase"
-                      id="credit-self-purchase"
                       className="mt-0.5"
                     />
-                    <Label
-                      htmlFor="credit-self-purchase"
-                      className="cursor-pointer text-sm font-normal"
-                    >
+                    <span className="text-sm font-normal">
                       {t(
                         "event.flyspotGdanskNov26.registrationForm.creditSelfPurchase",
                       )}
-                    </Label>
-                  </div>
-                  <div className="hover:bg-muted/30 -mx-2 flex cursor-pointer items-start space-x-2 px-2 py-2 transition-colors">
+                    </span>
+                  </RadioOption>
+                  <RadioOption className="items-start">
                     <RadioGroupItem
                       value="share_with_friends"
-                      id="credit-share-friends"
                       className="mt-0.5"
                     />
-                    <Label
-                      htmlFor="credit-share-friends"
-                      className="cursor-pointer text-sm font-normal"
-                    >
+                    <span className="text-sm font-normal">
                       {t(
                         "event.flyspotGdanskNov26.registrationForm.creditShareWithFriends",
                       )}
-                    </Label>
-                  </div>
-                  <div className="hover:bg-muted/30 -mx-2 flex cursor-pointer items-start space-x-2 px-2 py-2 transition-colors">
-                    <RadioGroupItem
-                      value="need_help"
-                      id="credit-need-help"
-                      className="mt-0.5"
-                    />
-                    <Label
-                      htmlFor="credit-need-help"
-                      className="cursor-pointer text-sm font-normal"
-                    >
+                    </span>
+                  </RadioOption>
+                  <RadioOption className="items-start">
+                    <RadioGroupItem value="need_help" className="mt-0.5" />
+                    <span className="text-sm font-normal">
                       {t(
                         "event.flyspotGdanskNov26.registrationForm.creditNeedHelp",
                       )}
-                    </Label>
-                  </div>
+                    </span>
+                  </RadioOption>
                 </RadioGroup>
                 {errorMessage && (
                   <p className="text-destructive text-sm">{errorMessage}</p>

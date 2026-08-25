@@ -226,7 +226,7 @@ function getEmailBody(language, info) {
             <tr>
               <td align="center">
               <img
-                src="https://www.pancakesfreefly.com/images/events/fooni-feb24.png"
+                src="https://www.pancakesfreefly.com/images/events/flyspot-gdansk-nov26.png"
                 width="600"
                 style="display:block; max-width:600px; width:100%;"
                 alt="${escapeHtml(EVENT_NAME[language])}"

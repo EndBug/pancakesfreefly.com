@@ -127,7 +127,7 @@
           "invalidEmail": "Inserisci un indirizzo email valido",
           "invalidPhone": "Inserisci un numero di telefono valido",
           "invalidDateRange": "La data di fine deve essere uguale o successiva alla data di inizio",
-          "minHours": "Seleziona almeno 30 minuti di tempo di volo"
+          "minHours": "Seleziona almeno 1 ora di tempo di volo"
         }
       }
     },

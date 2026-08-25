@@ -127,7 +127,7 @@
           "invalidEmail": "Please enter a valid email address",
           "invalidPhone": "Please enter a valid phone number",
           "invalidDateRange": "The end date must be on or after the start date",
-          "minHours": "Select at least 30 minutes of flying time"
+          "minHours": "Select at least 1 hour of flying time"
         }
       }
     },
