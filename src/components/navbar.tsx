@@ -60,7 +60,7 @@ export function Navbar({ enableScrollBehavior = false }: NavbarProps) {
               className="h-10 w-10 scale-120"
             />
           </div>
-          <span className="font-display text-primary tracking- translate-y-1 self-center text-5xl">
+          <span className="font-display text-primary tracking- translate-y-1 hidden self-center text-5xl sm:inline">
             {t("navbar.teamName")}
           </span>
         </Link>
