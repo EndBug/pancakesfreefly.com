@@ -98,7 +98,7 @@
         "firstName": "Nome",
         "lastName": "Cognome",
         "email": "Indirizzo email",
-        "phone": "Cellulare",
+        "phone": "Numero di telefono WhatsApp",
         "flyingHours": "Quantità di tempo che vuoi volare",
         "hoursMinusOne": "-1h",
         "hoursMinusFifteen": "-15m",

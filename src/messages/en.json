@@ -98,7 +98,7 @@
         "firstName": "Name",
         "lastName": "Last name",
         "email": "Email address",
-        "phone": "Mobile",
+        "phone": "WhatsApp phone number",
         "flyingHours": "Amount of time you want to fly",
         "hoursMinusOne": "-1h",
         "hoursMinusFifteen": "-15m",
